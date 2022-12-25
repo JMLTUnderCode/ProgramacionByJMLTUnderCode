@@ -2,7 +2,8 @@
 	Nombre: Junior Miguel Lara Torres
 	Carnet: 1710303
 	Nick: JMLTUnderCode
-	
+	Problema: Lyft Level 5 Challenge 2018 - Elimination Round - A. King Escape (Easy Implementation)
+
 	Idea General: 
 	
 	Notemos que al posicionarse la reina en el tablero crea "4 cuadrantes" donde el rey 
@@ -18,63 +19,74 @@
 		
 */
  
-#include <iostream>
-#include <vector>
-#include <math.h>
-#include <algorithm>
- 
+#include <bits/stdc++.h>
+
 using namespace std;
+
+// Inicializacion y definicion de variables/estructuras de datos/formatos.
+typedef vector<int> vi;
+int N;						// Variables basicas del problema.
+
+// Estructuras de datos.
+vi Queen_pos(2); 			// Vector que almacena la posicion de la reina. Precondicion: 1 <= ax, ay <= n
+vi Bob_pos(2); 				// Vector que almacena la posicion del rey. Precondicion: 1 <= bx, by <= n
+vi pos_win(2); 				// Vector que almacena la posicion objetivo. Precondicion: 1 <= cx, cy <= n
+
+// Funcion para lectura de documentos/casos de prueba.
+void init_code() {
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+}
 
 int main(){
 	
-	/* Inicializacion de Variables */
-	int n; // Precondicion: 3 <= n <= 1000
-	vector<int> Queen_pos(2); // Precondicion: 1 <= ax, ay <= n
-	vector<int> Bob_pos(2); // Precondicion: 1 <= bx, by <= n
-	vector<int> pos_win(2); // Precondicion: 1 <= cx, cy <= n
+	// Lectura de datos.
+	init_code();
+		
+	scanf("%d", &N);
 	
-	cin >> n;
-	
-	cin >> Queen_pos[0] >> Queen_pos[1];
-	cin >> Bob_pos[0] >> Bob_pos[1];
-	cin >> pos_win[0] >> pos_win[1];
-	
-	/* Bob y posicion de victoria a la izquierda de la Queen*/
+	scanf("%d%d", &Queen_pos[0], &Queen_pos[1]);
+
+	scanf("%d%d", &Bob_pos[0], &Bob_pos[1]);
+
+	scanf("%d%d", &pos_win[0], &pos_win[1]);
+
+	// Fin lectura de datos.
+
+	// Bob y posicion de victoria a la izquierda de la Queen
 	if ( (Queen_pos[0] > Bob_pos[0]) && (Queen_pos[0] > pos_win[0]) ) {
 		
 		/* Bob y posicion de victoria abajo de la Queen */
 		if ( (Queen_pos[1] > Bob_pos[1]) && (Queen_pos[1] > pos_win[1]) ) {
-			cout << "YES";
-			return 0;
+			printf("%s\n", "Yes"); return 0;
 		}
 		
 		/* Bob y posicion de victoria arriba de la Queen */
 		if ( (Queen_pos[1] < Bob_pos[1]) && (Queen_pos[1] < pos_win[1]) ) {
-			cout << "YES";
-			return 0;
+			printf("%s\n", "Yes"); return 0;
 		}
 		
-		cout << "NO";
+		printf("%s\n", "No");
 		
-	/* Bob y posicion de victoria a la derecha de la Queen */
+	// Bob y posicion de victoria a la derecha de la Queen
 	} else if ( (Queen_pos[0] < Bob_pos[0]) && (Queen_pos[0] < pos_win[0]) ) {
 		
 		/* Bob y posicion de victoria abajo de la Queen */
 		if ( (Queen_pos[1] > Bob_pos[1]) && (Queen_pos[1] > pos_win[1]) ) {
-			cout << "YES";
-			return 0;
+			printf("%s\n", "Yes"); return 0;
 		}
 		
 		/* Bob y posicion de victoria arriba de la Queen */
 		if ( (Queen_pos[1] < Bob_pos[1]) && (Queen_pos[1] < pos_win[1]) ) {
-			cout << "YES";
-			return 0;
+			printf("%s\n", "Yes"); return 0;
 		}
 		
-		cout << "NO";
+		printf("%s\n", "No");
 		
 	} else {
-		cout << "NO";
+		printf("%s\n", "No"); 
 	}
 	return 0;
 }
