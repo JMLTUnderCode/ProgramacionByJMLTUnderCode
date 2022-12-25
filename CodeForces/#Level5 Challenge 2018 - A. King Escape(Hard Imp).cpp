@@ -2,7 +2,7 @@
 	Nombre: Junior Miguel Lara Torres
 	Carnet: 1710303
 	Nick: JMLTUnderCode
-	Problema: Lyft Level 5 Challenge 2018 - Elimination Round - A. King Escape
+	Problema: Lyft Level 5 Challenge 2018 - Elimination Round - A. King Escape (Hard Implementation)
 
 	Idea General: 
 	
