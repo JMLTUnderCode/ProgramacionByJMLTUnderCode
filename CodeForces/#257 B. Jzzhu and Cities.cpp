@@ -2,6 +2,7 @@
 	Nombre: Junior Miguel Lara Torres
 	Carnet: 1710303
 	Nick: JMLTUnderCode
+	Problema: Codeforces Round #257 (Div. 1) B. Jzzhu and Cities
 
 	Idea General: 
 	
@@ -29,10 +30,11 @@
 
 using namespace std;
 
-// Inicializacion y definicion de variables/estructuras de datos/formatos
+// Inicializacion y definicion de variables/estructuras de datos/formatos.
 typedef long long ll;
 typedef pair<ll, ll> pi;
-int N, M, K;
+int N, M, K;					// Variables basicas del problema.
+int n_i; pi aux; ll w_t;		// Auxiliares de lectura de datos.
 int maximo = 100005;			// Cota maxima para el N.
 int m_maximo = 3*maximo;		// Cota maxima para el M.
 ll infty = 10000000000000000;	// "infinito".
@@ -70,7 +72,7 @@ void delete_trains() {
 			}														// repeticiones que este posee. 
 		}
 	}
-	printf("%d", del_trains); // Mostramos por pantalla la cantidad de trenes a eliminar.
+	printf("%d", del_trains); 		// Mostramos por pantalla la cantidad de trenes a eliminar.
 }
 
 // Algoritmo que permite determinar en un grafo caminos de costo minimo desde una fuente(nodo raiz).
@@ -99,7 +101,7 @@ void Dijsktra() {
 				if ( d[ady] > d[n_opt] + w_arc ) {		// Relajamos el arco en caso de poderse. 
 					d[ady] = d[n_opt] + w_arc;
 					P_Q.push(make_pair(d[ady], ady));	// Agregamos el nodo con la distancia actualizada.
-					cant_opt_road[ady] = 1;			// Marcamos la cantidad de caminos existentes.
+					cant_opt_road[ady] = 1;				// Marcamos la cantidad de caminos existentes.
 					
 				} else if (d[ady] == d[n_opt] + w_arc ){// Si las distancias son iguales entonces tenemos otros posible
 					cant_opt_road[ady]++;				// camino, por ende aumentamos la cantidad de caminos existentes.
@@ -116,27 +118,27 @@ void Dijsktra() {
 
 int main() {
 
-	// Lectura de datos
+	// Lectura de datos.
 	init_code();
 
 	scanf("%d%d%d",&N,&M,&K);
 	
-	int n_i; pi aux;
-	for(int t = 0; t < M; t++) {		// Lectura de rutas y la armar la lista de adyacencia
+	// Lectura de rutas y la armar la lista de adyacencia.
+	for(int t = 0; t < M; t++) {		
 		scanf("%d%d%d", &n_i, &aux.first, &aux.second);
 		Grafo[n_i].push_back(aux);
 		Grafo[aux.first].push_back(make_pair(n_i, aux.second));
 	}
 
-	ll w_t;
-	for(int t = 0; t < K; t++) {		// Lectura de trenes y pesos
+	// Lectura de trenes y pesos.
+	for(int t = 0; t < K; t++) {
 		scanf("%d%d", &n_i, &w_t);
 		rute_train.push_back(make_pair(n_i,w_t));
 		Grafo[1].push_back(make_pair(n_i,w_t));
 	}
 	// Fin lectura de datos.
 
-	// Llamada al Dijsktra
+	// Llamada al Dijsktra.
 	Dijsktra();
 
 	return 0;
