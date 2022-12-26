@@ -1,7 +1,8 @@
 /*
 	Nombre: Junior Miguel Lara Torres
 	Carnet: 1710303
-	Nick: JMLTunderCode
+	Nick: JMLTUnderCode
+	Problema: Codeforces Round #179 (Div. 1) B. Greg and Graph
 
 	Idea General: 
 	
@@ -28,11 +29,11 @@
 
 using namespace std;
 
-// Inicializacion y definicion de variables/estructuras de datos/formatos
+// Inicializacion y definicion de variables/estructuras de datos/formatos.
 typedef long long ll;
 
-int N;
-int maximo = 510;	// Cota maxima para el N
+int N;				// Variables basicas del problema.
+int maximo = 510;	// Cota maxima para el N.
 
 // Estructuras de datos.
 vector<vector<ll> > M_ady_dist(maximo, vector<ll> (maximo, 0)); // Matriz de Distancias del grafo.
@@ -82,7 +83,7 @@ int main() {
 	cin.tie(0);
 	cout.tie(0);
 
-	// Lectura de datos
+	// Lectura de datos.
 	init_code();
 
 	cin >> N;
