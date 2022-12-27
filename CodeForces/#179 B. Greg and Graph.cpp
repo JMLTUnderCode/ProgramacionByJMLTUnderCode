@@ -31,7 +31,6 @@ using namespace std;
 
 // Inicializacion y definicion de variables/estructuras de datos/formatos.
 typedef long long ll;
-
 int N;				// Variables basicas del problema.
 int maximo = 510;	// Cota maxima para el N.
 
