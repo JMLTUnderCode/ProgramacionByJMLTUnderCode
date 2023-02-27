@@ -33,17 +33,17 @@ using namespace std;
 // Inicializacion y definicion de variables/estructuras de datos/formatos.
 typedef long long ll;
 typedef pair<ll, ll> pi;
-int N, M, K;					// Variables basicas del problema.
+int N, M, K;				// Variables basicas del problema.
 int n_i; pi aux; ll w_t;		// Auxiliares de lectura de datos.
 int maximo = 100005;			// Cota maxima para el N.
 int m_maximo = 3*maximo;		// Cota maxima para el M.
-ll infty = 10000000000000000;	// "infinito".
-int del_trains = 0;				// Trenes a eliminar.
+ll infty = 10000000000000000;		// "infinito".
+int del_trains = 0;			// Trenes a eliminar.
 
 // Estructuras de datos.
 vector<list<pi> > Grafo(m_maximo);		// Estructura de datos para almacenar los datos del Grafo. 
 vector<int> visitados(maximo, 0);		// Marcador de visitados para cada nodo.
-vector<int> cant_opt_road(maximo, 0);	// Contador de caminos "optimos" hacia un nodo.
+vector<int> cant_opt_road(maximo, 0);		// Contador de caminos "optimos" hacia un nodo.
 list<pair<int, ll> > rute_train;		// Estructura de datos para guardar el nodo y el costo del tren.
 vector<ll> d(maximo, 0);				// Vector de distancias para cada nodo.
 priority_queue<pi, vector<pi>, greater<pi> > P_Q;	// Priority Queue para al Dijkstra.
@@ -65,10 +65,10 @@ void delete_trains() {
 	for ( auto it : rute_train ) {
 		comp = it.first; t_weight = it.second; d_opt = d[comp];
 		if (d_opt < t_weight) {		// En caso de tener una ruta de tren con costo mayor al optimo 
-			del_trains++;			// del nodo, entonces borramos dicho tren.
+			del_trains++;		// del nodo, entonces borramos dicho tren.
 		} else {
 			if ( d_opt == t_weight && cant_opt_road[comp] > 1)  {	// En caso de tener la mismo costo
-				del_trains++; cant_opt_road[comp]--;				// entonces revisamos la cantidad de 
+				del_trains++; cant_opt_road[comp]--;		// entonces revisamos la cantidad de 
 			}														// repeticiones que este posee. 
 		}
 	}
@@ -83,13 +83,13 @@ void Dijsktra() {
 	// Seteamos la distancia de todos los nodos, menos el fuente, en infinito.
 	for( int t = 2; t-1 < N; t++) d[t] = infty;
 
-	P_Q.push(make_pair(d[1], 1)); // Agregamos a la Priority Queue la fuente/raiz.
+	P_Q.push(make_pair(d[1], 1)); 		// Agregamos a la Priority Queue la fuente/raiz.
 
 	while( !P_Q.empty() ) {
 		node = P_Q.top();		// Vemos el elemento con menor distancia.
 		n_opt = node.second;
 		
-		P_Q.pop();				// Eliminamos el nodo con menor distancia.
+		P_Q.pop();			// Eliminamos el nodo con menor distancia.
 
 		// El nodo popeado esta visitado, entonces ya fue procesado.
 		if (visitados[n_opt] == 0) {
@@ -101,19 +101,19 @@ void Dijsktra() {
 				if ( d[ady] > d[n_opt] + w_arc ) {		// Relajamos el arco en caso de poderse. 
 					d[ady] = d[n_opt] + w_arc;
 					P_Q.push(make_pair(d[ady], ady));	// Agregamos el nodo con la distancia actualizada.
-					cant_opt_road[ady] = 1;				// Marcamos la cantidad de caminos existentes.
+					cant_opt_road[ady] = 1;			// Marcamos la cantidad de caminos existentes.
 					
 				} else if (d[ady] == d[n_opt] + w_arc ){// Si las distancias son iguales entonces tenemos otros posible
-					cant_opt_road[ady]++;				// camino, por ende aumentamos la cantidad de caminos existentes.
+					cant_opt_road[ady]++;		// camino, por ende aumentamos la cantidad de caminos existentes.
 				}
 			}
 		}
 		visitados[n_opt] = 1;	// Se marca como visitado/procesado el nodo popeado de la P_Queue
-								// con es optimo. Por teorema, la distancia de ese nodo a la fuente
-								// es optimo al salir de la P_Queue.
+					// con es optimo. Por teorema, la distancia de ese nodo a la fuente
+					// es optimo al salir de la P_Queue.
 	}
 
-	delete_trains();			// Buscamos los trenes a eliminar del grafo(ciudad).
+	delete_trains();		// Buscamos los trenes a eliminar del grafo(ciudad).
 }
 
 int main() {

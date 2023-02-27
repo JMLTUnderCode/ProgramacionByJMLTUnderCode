@@ -31,7 +31,7 @@ using namespace std;
 
 // Inicializacion y definicion de variables/estructuras de datos/formatos.
 typedef long long ll;
-int N;				// Variables basicas del problema.
+int N;			// Variables basicas del problema.
 int maximo = 510;	// Cota maxima para el N.
 
 // Estructuras de datos.
@@ -51,12 +51,12 @@ void init_code(){
 // Algoritmo/Funcion Floyd-Warshall que determina los costos minimos para todo par de nodos en un grafo.
 void Floyd_Warshall() {
 	for(int k = 1; k-1 < N; k++) { 	// "Paso k" en el greg elimina un nodo, lo que a su vez permite buscar 
-									// el nodo agregar en los caminos.
+					// el nodo agregar en los caminos.
 		
 		int n_j = node_del[N-k+1];	// Vemos el nodo eliminado en el paso N-k+1. Cuando k=1, estamos en el ultimo 
-									// nodo N-K+1 = N, lo cual es camino de tamaño 1 basicamente.
+						// nodo N-K+1 = N, lo cual es camino de tamaño 1 basicamente.
 
-		visitado[n_j] = 1;			// Marcamos como visitado el nodo a eliminar.
+		visitado[n_j] = 1;		// Marcamos como visitado el nodo a eliminar.
 
 		// Los fors anidados permiten iniciar el calculo de los costos minimo del camino de tamaño k.
 		for ( int x = 1; x-1 < N; x++ ) {

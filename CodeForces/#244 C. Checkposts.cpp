@@ -38,10 +38,10 @@ typedef list<int> li;
 int N, M;
 int maximo = 100005;			// Cota maxima del N.
 ll modulo = 1000000007;			// El "Modulo" perdido para determinar el numero para la variable "options".
-ll infty = 10000000000000000;	// "Infinito".
-ll options = 1;					// Cantidad de formas de colocar los Policias de seguridad.
-ll min_money = 0;				// Contiene el dinero minimo usado para colocar los Policias de Seguridad.
-int c_time = 1;					// Contador(time) para el uso del algoritmo Tarjan.
+ll infty = 10000000000000000;		// "Infinito".
+ll options = 1;				// Cantidad de formas de colocar los Policias de seguridad.
+ll min_money = 0;			// Contiene el dinero minimo usado para colocar los Policias de Seguridad.
+int c_time = 1;				// Contador(time) para el uso del algoritmo Tarjan.
 
 // Estructuras de datos.
 vector<int> opened(maximo, 0);		// Permite saber si un nodo tiene la llamada recursiva activa.
@@ -87,7 +87,7 @@ void Tarjan (int root) {
 	// Cuando tengamos mismo Low a Discovery entonces hemos encontrado una C.F.C.
 	if( disc[root] == low[root] ) {	
 		
-		ll cost_Min = infty;	// Iniciamos contador de costo minimo dentro de la C.F.C.
+		ll cost_Min = infty;		// Iniciamos contador de costo minimo dentro de la C.F.C.
 		ll repetitions = 1;		// Las respeticiones de ese costo minimo.
 		int nodo;
 
@@ -95,7 +95,7 @@ void Tarjan (int root) {
 			while(root != Pila.top() ) {
 				nodo = Pila.top();
 				Pila.pop();
-				opened[nodo] = 0;		// Cerramos la llamada recursiva al nodo poped.
+				opened[nodo] = 0;	// Cerramos la llamada recursiva al nodo poped.
 
 				// En caso de obtener un costo menor actualizamos.
 				if( police_cost[nodo] < cost_Min ) {
