@@ -43,20 +43,20 @@ public:
 	int min_cost;	// Costo del nodo.
 	string color;	// Color del nodo.
 	int range;	// Rango para busqueda BFS/DFS.
-	*/
 	int father;	// Nodo padre del nodo n;
 	int level;	// Para saber el nivel de un nodo en la busqueda BFS\DFS.
+	*/
 
 	// Constructor DEFAULT.
 	NODE() {
 		n = 0; visited = 0; 
 		//n_ady = 0; min_cost = 0; color = ""; range = 0; 
-		father = 0; level = 0;
+		//father = 0; level = 0;
 	}
 	// Constructor basico.
 	NODE(int _id, int _vis) : n(_id), visited(_vis) {
 		//n_ady = 0; min_cost = 0; color = ""; range = 0; 
-		father = 0; level = 0;
+		//father = 0; level = 0;
 	}
 	/*// En caso de necesitar Num nodo, isVisitado y color del nodo.
 	NODE(int _id, int _vis, string _color) : n(_id), visited(_vis), color(_color) {
@@ -169,7 +169,7 @@ public:
 	// Funcion que retorna el arbol DFS para un elemento root. Este "arbol dfs" consta
 	// de un vector de enteros cuyo orden expresa el orden en que fueron procesador en el 
 	// algoritmo DFS.
-	vn DFS_tree(NODE root) {	
+	/*vn DFS_tree(NODE root) {	
 		// Inicializacion, push, marcado de variables y nodos.
 		//int visited[n_nodes+1];
 		stack<NODE> S;
@@ -203,12 +203,12 @@ public:
 		for(int k = 0; k < cnt; k++) tree[k] = aux[k];
 
 		return tree;
-	}
+	}*/
 
 	// Funcion que retorna el arbol BFS para un elemento root. Este "arbol bfs" consta
 	// de un vector de enteros cuyo orden expresa el orden en que fueron procesador en el 
 	// algoritmo BFS.
-	vn BFS_tree(NODE root) {
+	/*vn BFS_tree(NODE root) {
 		// Inicializacion, push, marcado de variables y nodos.
 		//int visited[n_nodes+1];
 		queue<NODE> Q;
@@ -242,13 +242,13 @@ public:
 		for(int k = 0; k < cnt; k++) tree[k] = aux[k];
 
 		return tree;
-	}
+	}*/
 
 	// Funcion que permite calcular el camino entre dos nodos dados mediante el uso de
 	// metodo/algoritmo DFS, esto por implementacion iterativa y tracker de padres.
 	// Se retorna true en caso de encontrar el camino y antes de esto se muestra por
 	// pantalla, de lo contrario se retorna false.
-	bool path_between(int i, int f) {
+	/*bool path_between(int i, int f) {
 		if( i == f ) print_vi({i}); return true;
 
 		stack<NODE> S;
@@ -283,7 +283,7 @@ public:
 		} else {
 			return false;
 		}
-	}
+	}*/
 
 	// Funcion que realiza un BFS para una seria de raices "LIMITADO A" un cierto rango de amplitud 
 	// de busqueda, es decir se tiene un nodo ROOT con rango DIST por tanto todo nodo a distancia
