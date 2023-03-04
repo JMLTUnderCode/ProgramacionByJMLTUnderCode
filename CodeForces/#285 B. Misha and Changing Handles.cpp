@@ -21,13 +21,13 @@ using namespace std;
 // Inicializacion y definicion de variables/estructuras de datos/formatos.
 typedef vector<string> vs;
 int q;				// Variables basicas del problema.
-int numerator = 0;	// Numerador de los nicks finales.
+int numerator = 0;		// Numerador de los nicks finales.
 vs o_nick;			// Permite almanecar los nicks(clientes) primarios.
 vs f_nick;			// Permite almacenar los nicks finales de cada cliente.
-string s1, s2;		// Variables de uso auxiliar.
+string s1, s2;			// Variables de uso auxiliar.
 
 // Estructuras de datos.
-map<string, int> final_requests;	// Se mapea por key = string y value = entero para el final nick.
+map<string, int> final_requests;// Se mapea por key = string y value = entero para el final nick.
 
 // Funcion para lectura de documentos/casos de prueba.
 void init_code(){
@@ -56,18 +56,18 @@ int main() {
 		// cliente nuevo. Se le asigna incluso una posicion (numerator) dentro del
 		// vector de nicks originales y de finales.
 		if(!final_requests.count(s1)) {
-            final_requests[s2] = numerator;
-            o_nick.push_back(s1);
-            f_nick.push_back(s2);
-            numerator++;
-            
-        // En caso de S1 estar representado en el mapa, tomamos la posicion
-        // segunda (value) la key de S1 y reasignamos dentro de f_nick el
-        // nick pedido por el cliente ya existente.
-        } else {
-        	int pos = final_requests[s1];
-        	final_requests[s2] = pos;
-        	f_nick[pos] = s2;
+	        	final_requests[s2] = numerator;
+	        	o_nick.push_back(s1);
+			f_nick.push_back(s2);
+			numerator++;
+	            
+	        // En caso de S1 estar representado en el mapa, tomamos la posicion
+	        // segunda (value) la key de S1 y reasignamos dentro de f_nick el
+	        // nick pedido por el cliente ya existente.
+	        } else {
+	        	int pos = final_requests[s1];
+	        	final_requests[s2] = pos;
+	        	f_nick[pos] = s2;
 		}
 	}
 	

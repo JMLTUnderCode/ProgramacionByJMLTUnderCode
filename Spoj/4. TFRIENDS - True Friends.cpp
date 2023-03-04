@@ -488,6 +488,7 @@ public:
 				DFS_V1(S, Nodes[it]);
 			}
 		}
+		cout << root.n << endl;
 		S.push(root);
 	}
 
