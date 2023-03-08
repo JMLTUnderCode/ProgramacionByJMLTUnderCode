@@ -36,9 +36,9 @@ int maximo = 510;	// Cota maxima para el N.
 
 // Estructuras de datos.
 vector<vector<ll> > M_ady_dist(maximo, vector<ll> (maximo, 0)); // Matriz de Distancias del grafo.
-vector<ll> dist_mins(maximo, 0);								// Permite llevar el acumulador de cada paso en que se elimina un nodo.
-vector<int> visitado(maximo, 0);								// Marcador de visitados de los nodos eliminados
-vector<int> node_del(maximo, 0);								// Vector de nodos a eliminados.
+vector<ll> dist_mins(maximo, 0);		// Permite llevar el acumulador de cada paso en que se elimina un nodo.
+vector<int> visitado(maximo, 0);		// Marcador de visitados de los nodos eliminados
+vector<int> node_del(maximo, 0);		// Vector de nodos a eliminados.
 
 // Funcion para lectura de documentos/casos de prueba.
 void init_code(){
