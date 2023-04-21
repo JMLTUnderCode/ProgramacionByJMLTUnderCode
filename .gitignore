@@ -37,8 +37,6 @@
 # Generated files
 out/
 *
-!/**/
-!*.*
 
 input.txt
 output.txt
