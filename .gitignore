@@ -31,6 +31,15 @@
 *.out
 *.app
 
+# Linux
+*~
+
+# Generated files
+out/
+*
+!/**/
+!*.*
+
 input.txt
 output.txt
 TexMaker_Files
