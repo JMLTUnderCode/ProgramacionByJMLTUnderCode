@@ -1,3 +1,10 @@
+# Ignore all
+*
+# Unignore all with extensions
+!*.*
+# Unignore all dirs
+!*/
+
 # Prerequisites
 *.d
 
@@ -31,12 +38,8 @@
 *.out
 *.app
 
-# Linux
-*~
-
 # Generated files
 out/
-*
 
 input.txt
 output.txt
