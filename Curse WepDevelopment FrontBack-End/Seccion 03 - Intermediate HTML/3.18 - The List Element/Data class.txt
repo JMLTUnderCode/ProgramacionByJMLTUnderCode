@@ -1,0 +1,34 @@
+Seccion 03 - Clase 18
+
+Se habla de nuevos conceptos, listas, listas ordenadas 
+y desordenadas.
+
+Listas Desordenadas: 
+Tienen una sintaxis como sigue:
+
+<ul>
+    <li>Milk</li>
+    <li>Eggs</li>
+    <li>Flour</li>
+</ul>
+
+Se usa el tag "ul" para indicar que es una lista. 
+Luego se usa el tag "li" intertamente de "ul" para 
+indicar que son elementos de la lista desordenada.
+Con eso se muestra una lista solo con vi;etas 
+dando a entender sin orden especifico.
+
+Para que una lista funciona debe tener elementos.
+
+Lista Ordenadas:
+Tienen una sintaxis como sigue:
+
+<ol>
+    <li>Milk</li>
+    <li>Eggs</li>
+    <li>Flour</li>
+</ol>
+
+Con eso se muestra un orden, 1, 2, 3, ..., etc de los
+elementos descritos.
+

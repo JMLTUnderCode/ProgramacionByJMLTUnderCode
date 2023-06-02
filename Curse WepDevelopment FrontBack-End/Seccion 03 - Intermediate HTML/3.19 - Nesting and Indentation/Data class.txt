@@ -1,0 +1,26 @@
+Seccion 03 - Clase 19
+
+La anidacion y la indentacion son conceptos fundamentales
+de la programacion en general. 
+
+Esto quiere decir que podemos anidar listas dentro de listas.
+
+<ul>
+    <li>Wake up and brush teeth</li>
+    <li>Drink 500ml warm water</li>
+    <li>Do yoga for an hour</li>
+    <li>Make omelette
+        <ul>
+            <li>Whisk eggs with milk</li>
+            <li>Add butter to pan</li>
+            <li>Add in eggs and stir</li>
+            <li>When solid add salt</li>
+        </ul>
+    </li>
+    <li>Start work</li>
+</ul>
+
+Con eso quiere decir que se puede anidar listas dentro
+de otras, esto es dentro del un elemento de una lista 
+se puede iniciar otra lista.
+

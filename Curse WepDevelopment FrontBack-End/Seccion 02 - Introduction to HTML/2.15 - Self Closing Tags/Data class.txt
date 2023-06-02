@@ -1,0 +1,64 @@
+Seccion 02 - Clase 15
+
+Hemos vimos elementos no vacios como lo son los 
+encabezados y los parrafos. Se dicen que son no
+nulos porque existe un contenido entre tags.
+
+Un elemento vacio es aquel que tiene prohibido 
+poner cualquier contenido dentro de las tags.
+
+Entre ellas existen varios tags de tipo void, 
+pero entre los mas conocidos y usados es hr y br.
+En caso de hr es una "regla horizontal" esta se 
+escribe con cierta caracteristica, debe haber un 
+espacio entre la "r" y "/" es decir <hr />, esto
+muestra visualmente en la pagina web una linea de 
+separacion de contenidos para indica cero relacion
+entre los parrafos/contenidos.
+
+Ej.
+
+<p>This is a paragraph</p>
+<hr />
+<p>This is another paragraph</p>
+
+Para el caso de br es un "break Element" que a nivel 
+de codigo se expresa igual que hr, es decir <br />.
+Con esto conseguimos realizar separaciones/rupturas
+dentro de un contenido. Un ejemplo clasico es la
+poesia, por lo regular la poesia debe verse asi
+
+<p>"To see a World in a Grain of Sand
+And a Heaven in a Wild Flower
+Hold Infinity in the palm of your hand
+And Eternity in an hour."</p>
+
+Esto, en HTML con tag p se ve como una unica linea
+sin sentido. Pero con el uso de br en las lineas
+que queremos separar obtendremos esa estructura
+de poema.
+
+<p>
+"To see a World in a Grain of Sand<br />
+And a Heaven in a Wild Flower<br />
+Hold Infinity in the palm of your hand<br />
+And Eternity in an hour."<br />
+</p>
+
+Ahora, entre las cosas que se debe hacer y no hacer
+con elementos vacios es:
+
+No hacer.
+<p>
+Paragraph 1 <br />
+Paragraph 2 <br />
+</p>
+
+Hacer.
+<p> Paragraph 1 </p>
+<p> Paragraph 2 </p>
+
+Ultimamente, a nivel de codigo se puede optar por
+la barra luego de br o hr, o no usarla. A partir de
+HTML 5 esta barra se omite, en HTML's anteriores
+existe la opcion de usar con barra o sin barra.

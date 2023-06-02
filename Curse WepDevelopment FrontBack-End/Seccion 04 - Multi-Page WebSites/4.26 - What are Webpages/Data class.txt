@@ -1,0 +1,24 @@
+Seccion 04 - Class 26
+
+El uso combinado de varios HTML's es lo que crea
+en si webpages. Mediante el uso de rutas relativas
+podemos tener una carpeta con varios archivos HTML 
+tal que usando la vinculacion "tag a href" con ruta
+hacia otro archivo HTML al hacerse click sobre este
+vinculo entonces se mostrata el otro archivo HTML.
+
+De la misma forma el uso de imagenes en cada archivo
+HTML puede guardarse en respectivas carpetas para luego
+el uso de rutas relativas poder mostrarlas.
+
+De esta forma, notar que cuando uno abre ciertas
+carpetas que contienen multiples informacion/data
+de una pagian web, tienen una carpeta
+
+images
+Sources
+dat
+etc
+
+Dado que estan son formas de estructuras la data del
+sitio web.

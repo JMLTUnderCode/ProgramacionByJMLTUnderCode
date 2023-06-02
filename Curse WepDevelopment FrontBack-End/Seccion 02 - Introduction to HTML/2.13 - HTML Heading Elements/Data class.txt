@@ -1,0 +1,58 @@
+Seccion 02 - Clase 13
+
+El tag "heading" permite agregar encabezados en las paginas webs.
+La forma de agregar un encabezado es mediante el fragmento de 
+codigo: <h1>Hello World</h1>
+Existen varios formatos, desde h1 hasta h6.
+
+Donde <h1> representa el Opening Tag y </h1> representa el 
+Closing Tag. Lo que se encuentre entre las tags se considera 
+contenido a mostrar en el encabezado. Un "elemento" en HTML es 
+aquello que incluse las tags y el contenido, es decir un 
+elementos es "<h1>Hello World</h1>" completo.
+
+Dentro de un libro o indice de un libro notemos que tenemos 
+varios encabezamientos.
+
+Titulo 1
+Titulo 2
+    Titulo 2.1
+Titulo 3
+    Titulo 3.1
+        Titulo 3.1.1
+
+Cada etapa representa un encabezamiento, esto en HTML existe 
+pero hasta 6 niveles. de h1 hasta h6.
+<h1>Hello World 1</h1>
+<h2>Hello World 2</h2>
+<h3>Hello World 3</h3>
+<h4>Hello World 4</h4>
+<h5>Hello World 5</h5>
+<h6>Hello World 6</h6>
+
+Esto a nivel visual indica que cada "Hello World" tendra una 
+menor font size en la pagina web.
+
+En reglas generales, para el caso de dos titulos no es 
+recomendable hacer
+
+<h1>Hello World</h1>
+<h1>Another One</h1>
+
+Se recomienda hacer
+
+<h1>Hello World</h1>
+<h2>Another One</h2>
+
+Esto es porque asumimos que el h1 esta reservado para el encabezado
+mas top, el titulo principal, unico de la pagina. En esencia, si
+se quiere repetir font size y tener multiples titulos/subtitulos
+es mejor ir desde h2 hasta h6.
+
+No puede haber un h3 sin un h2, de lo contrario seria pasar a una
+subcategoria sin un encabezado previo inmediato.
+
+Si se quiere saber mas documentos sobre los headings se recomienda
+ir a Mozilla Developer Network Web Docs, alli tienen documentacion
+para todos los elementos de HTML que existen.
+

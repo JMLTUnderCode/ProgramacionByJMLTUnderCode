@@ -1,0 +1,44 @@
+Seccion 04 - Clase 25
+
+Rutas de archivos relativas y absolutas. Esto es un
+concepto que se aprende en Sistemas Operativos, en
+carreras computacionales.
+
+La ruta se define como una ubicacion unica para un
+archivo o carpeta en el ordenador.
+
+Las rutas absolutas son aquellas que permiten
+buscar un archivo/carpeta especifica en el ordenador.
+La direccion se muestra precisa en su navegacion 
+desde el comienzo hasta el final.
+Ej. C:/Proyect/Images/cat.png
+
+Las turas relativas son aquellas que permiten 
+buscar un archivo/carpeta estando en algun sitio
+del ordenador. Es decir, si estamos en la carpeta
+Proyect, usando una ruta relativa podemos ir hasta
+cat.png solo escribiendo "Images/cat.png"
+La ventaja de las rutas relativas es que esa ruta
+"Images/cat.png" no importa si la carpeta imagenes
+se mueve a otro sitio diferente pues siempre sera 
+valido a ejecutar. Por tanto es recomendable siempre
+usar rutas relativas en paginas webs.
+
+Dentro de la sintaxis de rutas estan los caracteres
+especiales como el (..) indicando que se debe subir
+un nivel en la ruta relativa y luego buscar la direccion
+dada.
+Ej. "../essay.docx"
+
+Quiere decir que, estando en una ruta x se debe subir
+al nivel x-1 en la estructuras de archivos y buscar
+eassy.docx
+
+Asi mismo, se tiene otro caracter especial y es el
+punto simple indicando que se debe quedar en la misma
+ruta relativa y buscar a continuacion.
+Ej. "./dog.png"
+
+Quiere decir que se busca en el mismo directorio el 
+archivo dog.png
+

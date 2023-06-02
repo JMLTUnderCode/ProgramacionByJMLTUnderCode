@@ -1,0 +1,91 @@
+Seccion 04 - Clase 27
+
+Los Boileplate es una forma de estructuras entre los 
+archivos HTML.
+
+Es un template basico para todo archivo HTML que permite
+darle forma al orden de los archivos.
+
+La sintaxis es:
+
+Al principio se debe comenzar con una declaracion de
+tipo, que para la version actual de HTML, la 5, es 
+
+<!DOCTYPE html>
+
+Luego, se usa la tag html con atributo lang = "en", siendo 
+este el lenguage. Esto indica que todos los elementos a
+a crear iran dentro.
+
+<!DOCTYPE html>
+<html lang = "en">
+
+
+</html>
+
+Luego, van los tag "head" indicando la data del sitio
+web que el usuario no puede ver pero que ayuda a la pagina
+a cargarse correctamente, conjunto de caracteres que se usa
+el metatag "meta" con atributo charset en UTF-8 garantizando
+que se muestren correctamente los caracteres. Los emojis
+en cierto grupo de caracteres no se muestran, con UTF-8
+se cierta mucha variedad.
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+ 
+    </head>
+
+</html>
+
+Luego, en la seccion de head debe ir el titulo de la
+pagina web que estara contemplada en la barra de 
+pesta;as del navegador.
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>My Website</title>
+    </head>
+
+
+</html>
+
+Con esto se tiene la base esencial de todo archivo HTML.
+Ahora, biene el HTML body element que donde estara todo 
+el codigo neto de la pagina web, donde se pasa la mayor
+parte del tiempo creado y escribiendo el sitio web.
+Ira todo el texto, imagenes, titulos, enlaces, subtitulos,
+todo lo que se puede hacer con HTML.
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>My Website</title>
+    </head>
+
+    <body>
+        (codigo neto)
+    </body>
+</html>
+
+Ahora un metatag adicional que se puede agregar,
+hay muchas(investigar), para al mostrar por primera
+vez el sitio web se muestre a cierta escala, es 
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=devide-width, inicial-scale=1.0">
+        <title>My Website</title>
+    </head>
+
+    <body>
+        (codigo neto)
+    </body>
+</html>

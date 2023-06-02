@@ -1,0 +1,32 @@
+Seccion 03 - Clase 20
+
+Los elementos ancla, estos permiten crear hipervinculos.
+Es lo que conocemos de "color azul" sobre una palabra
+o frase en una pagina web que al darle click nos 
+redirige a otra pagina, imagen, documento, etc.
+
+Su sintaxis esta compuesta por
+
+<a>This is a link</a>
+
+Sin embargo, tal como se ve arriba esto se considera
+un hipervinculo inactivo.
+Para hacer un hipervinculo activo se debe agregar
+un "ATRIBUTO ADICIONAL", los atributos adicionales 
+para un elemento HTML va en la etiqueta de apertura
+justo despues del nombre del tag y con atributo "href".
+Ejemplo:
+
+<a href = "http://www.google.com">This is a link</a>
+
+De forma general los atributos tiene la siguiente sintaxis
+
+<tag attribute = value>Content</tag>
+
+De esta forma, un elemento en HTML puede tener varios 
+atributos, simplemente con un espacio entre cada atributo
+es mas que necesario y todos dentro de la tag de apertura.
+Ej.
+
+<tag attribute1 = value1 attribute2 = value2>Content<t/tag>
+

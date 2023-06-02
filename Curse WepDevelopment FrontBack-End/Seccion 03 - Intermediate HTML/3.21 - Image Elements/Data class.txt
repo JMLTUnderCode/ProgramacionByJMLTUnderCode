@@ -1,0 +1,25 @@
+Seccion 03 - Clase 21
+
+Las imagenes en los sitios web. La sintaxis para 
+este elemento HTML es
+
+<img src = "url" />
+
+El atributo SRC indica al tag "img" cual es la 
+fuente de la imagen(url). Esta tag es considerada
+void sado que no es de tipo autocierre.
+
+Ej. Se quiere una foto random de una pagina web como
+fuente de la imagen.
+
+<img str = "https://picsum.photos/200" />
+
+Esto muestra una foto random de size = 200p x 200p
+
+Otro atributo que puede llevar el tag img es "alt"
+indicando un titulo alternativo de la foto. Esto ayuda
+a las personas ciegas con lectores de pantalla poder
+describir la foto.
+
+<img str = "https://picsum.photos/200" alt = "Forest at subset"/>
+

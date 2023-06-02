@@ -1,0 +1,9 @@
+Seccion 02 - Clase 14
+
+En la clase 3 se aprendio de los encabezados. 
+Aca se apredera de parrafos. A nivel de codigo se para el
+parrafo es <p>This is a paragraph</p>
+
+Con el uso de la tag <p> podemos establecer parrafos con una
+indentacion notoria y que para lectores sera clara y precisa 
+a la hora de leer.
