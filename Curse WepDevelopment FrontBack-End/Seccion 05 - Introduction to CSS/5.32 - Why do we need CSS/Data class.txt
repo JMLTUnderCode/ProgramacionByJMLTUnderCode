@@ -1,0 +1,12 @@
+Seccion 05 - Clase 32
+
+El CSS es un lenguaje similar al HTML que permite darle 
+estilo al  sitio web. Color, forma, estructura, etc.
+
+Sus siglas son Cascading Style Sheets.
+
+Este lenguaje empezo siendo diseñado en 1997 con algunas
+nuevas implementaciones agregadas al HTML, HTML 3.2 en 
+esos tiempos.
+Entre ellas el tag FONT que permite darle tamaño, Color
+y forma a los caracteres.

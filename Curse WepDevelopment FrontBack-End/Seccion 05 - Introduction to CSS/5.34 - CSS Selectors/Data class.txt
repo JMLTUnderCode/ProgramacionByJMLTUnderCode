@@ -1,0 +1,112 @@
+Seccion 05 - Clase 34
+
+Los selectores son aquellas formas en que el codigo CSS 
+se ejecuta, es decir cuando se tiene el siempre estilo
+
+style.css -->
+h1 {
+    color: green;
+}
+
+Quiere decir que se aplica color verde a lo que contenga 
+la etiquera h1.
+Pero esto quiere decir que se aplica a todos los elementos
+que tengan h1. 
+
+Ahora en caso de marcar con varios colores diferentes 
+tres tags de tipo h2. Se usa el concepto de CLASE en CSS,
+este permite en el archivo HTML agregado como atributo.
+La clase se crea en el archivo CSS y este debe iniciar con
+punto (.)[nombre de la clase] y las caracteristicas en 
+codigo CSS.
+Ej.
+
+index.html -->
+<h2 class="red-text">Red</h2>
+<h2 class="green-text">Green</h2>
+<h2 class="blue-text">Blue</h2>
+
+style.css ->>
+.red-text{
+    color: red;
+}
+.green-text{
+    color: green;
+}
+.blue-text{
+    color: blue;
+}
+
+Otro concepto de selectores es por ID, funciona similar a la
+clase. El codigo principal va en el archivo css y se iniciar
+con un simbolo (#)[nombre del ID]. Sin embargo existe una 
+notoria diferencia entre class e ID, en class se puede
+aplicar a todo aquella tag que tenga como atribulo class, 
+pero en ID al darle a un tag el ID este sera unico, no puede
+haber otro elemento HTML con el mismo ID, es decir unicos
+por archivo HTML.
+
+Ej.
+
+index.html -->
+<h2 id="red-text">Red</h2>
+<h2 id="green-text">Green</h2>
+<h2 id="blue-text">Blue</h2>
+
+style.css ->>
+#red-text{
+    color: red;
+}
+#green-text{
+    color: green;
+}
+#blue-text{
+    color: blue;
+}
+
+Otro concepto es el selector de atributos, basicamente
+es crear una etiqueta/tag con los atributos que queramos.
+Cuando este se use en el archivo HTML entonces dicho tag
+adopta todos los atributos descritos en el CSS.
+A nivel de codigo esto se hace en el archivo css indicando
+el tag, tipo de atributo y luego las propiedades a cambiar.
+
+Ej.
+
+index.html -->
+<p draggable="true">Drag me</p>
+<p>Dont Drag me</p>
+<p>Dont Drag me</p>
+
+style.css -->
+p[draggable]{
+    color: red;
+}
+
+Y una forma versatil de escribir codigo en CSS es usando
+la seleccion por busqueda logica
+
+index.html -->
+<p draggable="true">Drag me</p>
+<p draggable="false">Dont Drag me</p>
+<p draggable="false">Dont Drag me</p>
+
+style.css -->
+p[draggable="false"]{
+    color: red;
+}
+
+Otro concepto es el selector universal. Este se describe por
+el simbolo * en el archivo css y se escribe como una class,
+id o atributo selector. Todo lo que se describa a nivel de 
+codigo sera aplicado a la pagina web en general.
+
+index.html -->
+<h1 class="title">Hello</h1>
+<h2 id="heading">Wolrd</h2>
+<p draggable="true">This is a website</p>
+
+style.css -->
+* {
+    color: red;
+}

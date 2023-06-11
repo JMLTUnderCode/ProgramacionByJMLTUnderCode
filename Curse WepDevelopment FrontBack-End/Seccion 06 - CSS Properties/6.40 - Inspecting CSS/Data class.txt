@@ -1,0 +1,23 @@
+Seccion 06 - Clase 40
+
+El inspector es una herramienta para desarroladores web
+que lo contiene Google Chrome o cualquier navegador
+derivado del mismo, Brave por ejemplo.
+
+Vas a configuracion, Mas herramientas, herramientas del 
+desarrolador. O en su defecto un shortcut Ctrl+shitf+i.
+Otra forma de ingresar es selecionando alguna parte de la
+pagina y segundo click - inspeccionar, o simplemente
+segundo click - inspeccionar.
+
+Esta herramienta permite modificar de forma local la pagina
+web para asi darle la ventaja al desarrolador checar y 
+verificar dichos cambios antes de agregarlos a su propio
+codigo CSS, por ejemplo, puede ser usado para buscar errores,
+etc.
+
+Para aprender y validar los conocimientos obtenidos ir a la
+pagina 
+
+https://yuangela.com/css-inspection/
+

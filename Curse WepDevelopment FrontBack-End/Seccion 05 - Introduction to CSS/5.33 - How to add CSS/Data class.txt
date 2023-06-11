@@ -1,0 +1,60 @@
+Seccion 05 - Clase 33
+
+Hay tres formas de agregar CSS a un sitio web HTML.
+
+
+* De forma inline
+<tag style = "css" />
+
+Ej.
+<html style="background: blue">
+</html>
+
+Los atributos de tipo style vienen de la forma 
+"propiedad: valor" en este caso se cambia el fondo principal
+background a color azul blue.
+Debido a la naturaleza de uso en forma inline no se recomienda
+usarlo. Pues habria que siempre especificar el style, propiedad
+y caracteristica lo que haria engorroso el codigo html.
+
+* De forma Internal
+<style>css</style>
+
+Ej.
+<html>
+    <head>
+        <style>
+            html{
+                background: red;
+            }
+        </style>
+    </head>
+</html>
+
+Este metodo no es recomendado para multiples websites. si se
+usa un unico archivo html entonces si pues todo el CSS esta 
+centrado.
+
+* De forma External
+<link href = "style.css"/>
+
+Ej.
+index.html -->
+<html>
+    <head>
+        <link 
+            rel = "stylesheet"
+            href = "./styles.css"
+        />
+    </head>
+</html>
+
+style.css -->
+html {
+    background: green;
+}
+
+Esta forma permite separar el codigo de HTML con CSS. En la
+parte de HTML HEAD se agrega un link hacia el archivo CSS con
+el respectivo codigo a cargar. Esto permite modular el codigo y
+verse mas legible.

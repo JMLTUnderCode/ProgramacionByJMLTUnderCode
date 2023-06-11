@@ -1,0 +1,95 @@
+Seccion 06 - Clase 41
+
+Dentro de una pagina web todo elemento HTML esta compuesto
+por una Box, de cierta forma un titulo, subtitulo, texto,
+imagen, etc implicitamente se relaciona con un box que lo
+contiene a dicho elemento. 
+Es decir, un ejemplo clasico, cuando se tiene una imagen que
+a nivel superior tiene un titulo y a nivel inferior otro 
+titulo, entonces si cambiamos el size de la imagen el titulo
+inferior se va corriendo hacia abajo.
+
+Bajo este ambito, se plantea el concepto Box Model que son
+propiedades de las cajas implicitas que contiene un elemento
+HTML.
+
+** Width:
+
+Se encarga de la anchura de una imagen o texto en su defecto.
+Incluso puede darse a entender que si escribimos en el apartado
+CSS "width: 100%;" queremos decir que dicho elemento ocupara
+el 100% de la pagina web.
+
+** height:
+
+Se encarga de la altura de una imagen o texto en su defecto.
+Se puede trabajar con % de igual forma que width.
+
+** Border:
+
+Si se expresa "border: 10px solid black" la Box del elemento 
+sera enmarcado con un borde negro de size 10 pixeles.
+La sintaxis de esta propiedades es 
+"border: (size of border) (style of border) (color of border)"
+
+Hay propiedades mas especificas sobre los bordes, si se escribe
+"border-top: 0px" quiere decir que no existe un borde superior.
+Sin embargo esta propiedades debe ir luego de haber creado el
+borde, es decir
+
+tag/class/... {
+    border: 10px solid black
+    border-top: 0px"
+}
+
+Incluso hay una propiedad para jugar con los 4 lados de la
+caja a nivel de bordes. Esta es "border-width" cuya sintaxis
+es "border-width: (size of top) (size of right) 
+(size of bottom) (size of left)"
+
+tag/class/... {
+    border: 10px solid black
+    border-width: 0px 10px 20px 30px"
+}
+
+** Padding: / Relleno
+
+Se encarga de crear espacio interno entre el texto/imagen 
+y los bordes de la caja implicita.
+
+"padding: 20px"
+
+** Margin: / Margen
+
+Funciona como el padding pero inverso, en este caso agrega
+un size en pixel pero desde el borde de la caja implicita 
+hacia afuera. 
+
+"margin: 20px"
+
+NOTA IMPORTANTE:
+
+Las propiedades Margin, Padding y Border-width
+tiene la misma caracteristica a nivel de sintaxis.
+Es decir, puede recibir hasta 4 valores donde cada
+uno representa en el siguiente orden
+
+margin/padding/border-width 1 2 3 4
+1 = top side
+2 = right side 
+3 = bottom side 
+4 = left side 
+
+En caso de proporcionarse dos valores nada mas este seran
+tomados encuenta como 
+
+margin/padding/border-width 1 2
+1 = top and bottom side 
+2 = right and left side 
+
+Por otro lado, en caso de querer agrupar contenido y 
+crear cajas implicitas. Ejmplo un texto a la izquierda y
+una imagen descriptiva a la derecha y ambos elementos 
+esten enmarcados por un borde, entonces se usa el tag "div"
+
+<div> Content </div>

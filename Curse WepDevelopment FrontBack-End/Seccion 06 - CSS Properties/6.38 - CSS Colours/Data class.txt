@@ -1,0 +1,43 @@
+Seccion 06 - Clase 38
+
+Existen muchas propiedades de colores en CSS.
+Ya se ha visto hasta el momento como colocar
+color al fondo de un sitio web.
+
+html {
+    background-color: red;
+}
+
+Establecer colores a titulos o parrafos
+
+h1 {
+    color: blue;
+}
+
+Ahora para saber cuantos colores Existen
+y como se llaman se recurre a la documentacion.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
+
+Mas de 150 colores.
+
+Ahora bien, estos son colores en generales.
+A la hora de necesitar una paleta de colores
+un poco mas original y unica a tu estilo la
+puedes buscar desde 
+
+https://colorhunt.co/
+
+Ahora si queres armar tu propia paleta de colores
+es recomendable usar el mezclador de colores
+RGB 
+
+https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/
+
+y buscar el color por RGB(x, y, z) donde x,y,z son
+las proporciones de color que esta compuesto.
+Es decir,
+x de 250 Rojo
+y de 250 Verde
+z de 250 Azul
+

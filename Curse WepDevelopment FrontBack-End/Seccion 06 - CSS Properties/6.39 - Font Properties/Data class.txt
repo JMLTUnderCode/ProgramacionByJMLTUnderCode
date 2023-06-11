@@ -1,0 +1,88 @@
+Seccion 06 - Clase 39
+
+La propiedes en el aspecto de tamaño de letra.
+Aca al igual que todo aspecto de programacion
+tiene su propia documentacion que puede ser
+leida y estudiada.
+
+Para las clasicas y mas usadas propiedades en
+el concepto font se tienen
+
+h1 {
+    font-size: 20px;
+}
+
+Esto indica el size de la fuente de la letra.
+Para saber que size tiene en realidad a la vista
+se debe saber que 1 pixel = 1/96 pulgadas.
+Sin embargo hay otras formas de medir el size de
+la fuente, algunas veces ser usa el termino "punto",
+se dice que px = pixel y pt = point, en este caso
+1 pt = 1/72 pulgadas.
+
+Otra medida es el termino "em" un 1em indica que
+dicho texto sera el 100% del size del padre y el 
+concepto del nombre viene de que la letra M en el
+alfabeto es la letra mas ancha, es decir si por 
+ejemplo se tiene
+
+<body>
+    <h1>Hello World</h1>
+</body>
+
+Si la tag body tiene un size font de 20 px y el
+tag h1 esta en propiedades em entonces este tendra
+el mismo size que body.
+
+Otra medida es "rem" que funciona similar a "em"
+pero como vimos que em trabajo con respecto al padre
+la propiedad rem trabaja con respecto a la raiz del 
+archivo HTML, es decir esta configuracion tendra
+el 100% del tag raiz del archivo.
+
+Pra el caso de la familia de fuentes, la tipografia
+en este caso, se debe tener en cuentra que no toda
+tipografia esta implementada en los SO. Por tanto
+se tiene la conversion de una fuente de reserva. 
+es decir
+
+h1 {
+    font-family: Helvetica, sans-serif;
+}
+
+Para los usuarios de Mac veran el titulo h1 en 
+fuente Helvetica que esta diseñada para dicho SO,
+en caso de los usuarios Windows entonces veran 
+sans-serif por defecto. 
+
+Por otra parte, si quieres indicarle a CSS un tipo
+de fuente cuyo nombre esta compuesto por varias
+palabras entonces debes agregar comllas. Es decir
+esto es un error
+
+h2 {
+    font-family: Times New Roman, serif;
+}
+
+Lo correcto es
+
+h2 {
+    font-family: "Times New Roman", serif;
+}
+
+En caso de quere una fuente personalizada y unica 
+a tu gusto, se recomiendo visitar
+
+https://fonts.google.com/
+
+Y verificar a elegir una a gusto.
+
+Para agregar este font, vas a la pagina, agregas el
+estilo de font, copias y pegas el link que va en la 
+seccion head del HTML y luego usas el CSS Rules
+que te proporciona la pagina para usar el FONT.
+
+En el caso de aliniamientos de texto en el archivo
+HTML se usa la propiedad text-align, con valor
+right, left, end, start, etc ver la documentacion.
+
