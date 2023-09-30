@@ -1,1 +1,85 @@
-Seccion 07 - Class 
+Seccion 07 - Class 44
+
+La combinacion de selectores permite ejecutar comandos o codigo
+de tipo CSS de manera especifica de forma dinamica.
+
+<p>Yellow Text</p>
+<div class="box inner-box">
+    <p>White text</p>
+</div>
+
+Si se usa el siguiente .css
+
+p {
+    color: yellow;
+}
+
+Entonces se marca cada text con el tag "p" de color amarillo.
+Pero en caso de querer en segundo p en color blanco se 
+usar la combinacion de selectores de la siguiente forma
+
+p {
+    color: yellow;
+}
+.inner-box p {
+    color: white;
+}
+
+Indicando que una vez ubicada la clase inner-box se busca 
+de forma descendente al tag p y se cambia a color white.
+
+Existen muchas reglas a la hora de combinar selectores, 
+entre ellas tenemos
+
+1. Group:
+
+selector, selector {
+    propiedad a aplicar
+}
+
+Con esta forma podemos seleccionar una series de selectores 
+a las cuales le podemos aplicar las propiedades que queramos.
+
+2. Child and Parent
+
+selector1 > selector2 {
+    propiedad a aplicar
+}
+
+Con esta forma estamos indicando que el selector1 a la 
+izquierda es el padre y el selector 2 a la derecha es el hijo.
+Con la busqueda ascendente con selector2 hijo directo, no puede
+ser nieto, bisnieto, etc. sino hijo directo del selector1 padre
+(izquierda), esto quiere decir que para el caso de tener las 
+siguientes divs
+
+<div selector1> 
+    <div selector2>
+
+    </div>
+</div>
+
+Se aplicara a la div o cuadro de dominio del selector2 las 
+propiedades descritas en el css.
+
+3. Descendant
+
+selector1 selector2 {
+    propiedad a aplicar
+}
+
+Este formato indica que el selector1 es el ancestor y 
+el selector2 es el descendent, con esto podemos aplicar
+el mismo concepto que child and parent pero sin la 
+restriccion de que debe ser un nivel mas abajo que el padre 
+sino que puede estar a x niveles abajo el descendent del 
+ancestor.
+
+4. Chaining (Encadenamiento)
+
+selector1selector2 {
+    propiedad a aplicar 
+}
+
+Este formato especifica que se aplica cuando todos los
+selectores descritos son true.

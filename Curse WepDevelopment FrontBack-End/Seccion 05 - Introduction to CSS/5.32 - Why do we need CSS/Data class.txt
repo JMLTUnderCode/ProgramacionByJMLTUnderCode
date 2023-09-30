@@ -9,4 +9,4 @@ Este lenguaje empezo siendo diseñado en 1997 con algunas
 nuevas implementaciones agregadas al HTML, HTML 3.2 en 
 esos tiempos.
 Entre ellas el tag FONT que permite darle tamaño, Color
-y forma a los caracteres.
+y forma a los caracteres. 

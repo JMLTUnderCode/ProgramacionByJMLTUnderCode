@@ -1,1 +1,41 @@
 /* Write your code here: */
+/*Metodo por grupo*/
+h1, h2 {
+    color: blueviolet;
+}
+
+/*Metodo por padre e hijo*/
+/* Existen varias formas para este caso usando
+    .box > p
+    div > p
+    .box > .done
+ */
+.box > p {
+    color: firebrick;
+}
+
+/*Metodo del descendiente*/
+/* Existen varias formas para este caso usando
+    .box ul
+    .box .list
+    div .list
+    .box li
+*/
+.box ul {
+    color: blue;
+}
+
+/*Metodo del encadenamiento*/
+li.done{
+    color: seagreen;
+}
+
+/*Metodo combinado: Descendant + Chaining*/
+/* Existen varias formas para este caso usando
+    ul > p.done
+    ul p.done
+*/
+ul p.done{
+    font-size: 0.5rem;
+}
+

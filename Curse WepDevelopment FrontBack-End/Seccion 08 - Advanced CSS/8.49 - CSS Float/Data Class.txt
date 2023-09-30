@@ -1,0 +1,17 @@
+Seccion 08 - Clase 49
+
+El comando float permite hacer que los elementos que 
+tengas esta propiedad floten a cierto lado de otro 
+elemento, ejemplo una imagen a la izquierda rodeado 
+por un texto como en los periodicos.
+
+Esto se consigue usando float: left; de dicha imagen 
+por ejemplo. La mismo para para flotar hacia lado derecha
+con float: right pasa lo mismo. 
+
+Asi mismo, para los pie de pagina se debe usar la
+propiedad clear: left; para desvincular el flote 
+del pie de pagina sobre los elemento de tipo 
+float: left, lo mismo para clear: right. 
+En tal caso se puede usar directamente
+clear: both; para desvincular a todo propiedad. 

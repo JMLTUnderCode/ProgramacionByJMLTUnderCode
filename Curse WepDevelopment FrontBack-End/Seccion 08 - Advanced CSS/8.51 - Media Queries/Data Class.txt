@@ -1,0 +1,17 @@
+Seccion 08 - Clase 51
+
+El uso de media query es para tener un efecto 
+responsivo basado en comando
+
+@media (min-width: XXpx) and (max-width: XXpx){
+    /*CSS Code*/
+}
+
+Esto entre otras caracteristica que se requieren a 
+la hora de mostrar la pagina web en diferentes
+dispositivos, laptops, desktop, mobile, etc.
+
+Buscando en internet lo que debes aprender sobre
+media querys esta relacionado a la pagina 
+developer.mozolla.org
+

@@ -13,7 +13,7 @@ La direccion se muestra precisa en su navegacion
 desde el comienzo hasta el final.
 Ej. C:/Proyect/Images/cat.png
 
-Las turas relativas son aquellas que permiten 
+Las rutas relativas son aquellas que permiten 
 buscar un archivo/carpeta estando en algun sitio
 del ordenador. Es decir, si estamos en la carpeta
 Proyect, usando una ruta relativa podemos ir hasta

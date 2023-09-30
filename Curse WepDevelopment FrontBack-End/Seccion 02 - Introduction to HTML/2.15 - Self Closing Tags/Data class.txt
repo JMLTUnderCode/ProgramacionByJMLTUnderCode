@@ -39,10 +39,10 @@ que queremos separar obtendremos esa estructura
 de poema.
 
 <p>
-"To see a World in a Grain of Sand<br />
-And a Heaven in a Wild Flower<br />
-Hold Infinity in the palm of your hand<br />
-And Eternity in an hour."<br />
+"To see a World in a Grain of Sand <br />
+And a Heaven in a Wild Flower <br />
+Hold Infinity in the palm of your hand <br />
+And Eternity in an hour." <br />
 </p>
 
 Ahora, entre las cosas que se debe hacer y no hacer

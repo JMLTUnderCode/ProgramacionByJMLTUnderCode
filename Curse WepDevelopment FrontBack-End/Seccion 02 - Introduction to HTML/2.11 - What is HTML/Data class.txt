@@ -5,12 +5,15 @@ Un HTML
 Un CSS
 Un JavaScript
 El conjunto de estos tres hacen que lo que conocemos hoy como pagina web.
-El archivo HTML contiene el codigo fuente, de hecho con esto se crearon las primeras paginas webs.
-Es decir, el archivo HTML define el contenido y la estructura del sitio web.
+El archivo HTML contiene el codigo fuente, de hecho con esto se crearon 
+las primeras paginas webs. Es decir, el archivo HTML define el contenido 
+y la estructura del sitio web.
 
 HTML = HyperText Markup Language
 
-* HyperText se refiere a los fragmentos del texto que pueden enlazar/link con otros documentos del sitio web.
-* Markup Language se refiere al marcado de texto mediante etiquetas en HTML, este lenguaje permite escribir 
-como en WORD, agregar negritas, estilos de letras, variadas fuentes, subrayado de palabras, titulos, subtitulos,
-etc.
+* HyperText se refiere a los fragmentos del texto que pueden 
+enlazar/link con otros documentos del sitio web.
+* Markup Language se refiere al marcado de texto mediante etiquetas 
+en HTML, este lenguaje permite escribir como en WORD, agregar negritas, 
+estilos de letras, variadas fuentes, subrayado de palabras, titulos, 
+subtitulos, etc.

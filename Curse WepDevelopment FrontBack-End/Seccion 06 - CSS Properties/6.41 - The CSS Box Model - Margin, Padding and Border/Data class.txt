@@ -88,7 +88,7 @@ margin/padding/border-width 1 2
 2 = right and left side 
 
 Por otro lado, en caso de querer agrupar contenido y 
-crear cajas implicitas. Ejmplo un texto a la izquierda y
+crear cajas implicitas. Ejemplo un texto a la izquierda y
 una imagen descriptiva a la derecha y ambos elementos 
 esten enmarcados por un borde, entonces se usa el tag "div"
 

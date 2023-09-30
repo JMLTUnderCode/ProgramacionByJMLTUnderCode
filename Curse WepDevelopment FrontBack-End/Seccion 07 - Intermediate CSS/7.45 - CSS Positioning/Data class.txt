@@ -1,1 +1,70 @@
-Seccion 07 - Class 
+Seccion 07 - Class 45
+
+El posicionamiento en CSS habla de la caja de text o 
+elemento dentro de la pagina web que podemos ubicar de
+distintas formas. Existen tres formas, por posicionamiento
+relativo, absoluto fijo,estatico y arreglado.
+
+Entrar a la pagina https://appbrewery.github.io/css-positioning/
+para aprender y tener una nocion sobre posicionamiento.
+
+1. Static Positioning
+
+Esta el posicionamiento clasico y por defoult de cualquier
+elemento HTML en una pagina web.
+Cada elemento se expresa a la izquierda de la pagina web 
+y en forma descendente.
+
+
+2. Realtive Positioning
+
+Es una nivel de posicionamiento por defecto como el Static 
+pero con la caracteristica de poder modificarse. Esto quiere
+decir que inicialmente toma la posicion de inicial como 
+Static pero puede moverse relativamente a ese punto inicial.
+
+3. Absolute Positioning
+
+Se define como la posicion relativa al ancestro mas cercano
+definido con propiedad relativa.
+O en caso de no tener ancestro relativo entonces se posiciona
+relativo a la esquina superior izquierda de la PAGINA WEB.
+Se tiene el ejemplo
+
+<div> <- Position: relative;
+    <div> <- Position: Absolute;
+
+    </div>
+</div>
+
+Con esto queire decir que el segundo div con posicionamiento
+absoluto va a ser posicionada relativamente en base al 
+ancestro con posicionamiento relativo.
+
+4. Extra: Z-Index
+
+Este permite indica si un elemento esta por encima de otro o
+por debajo.
+Indicando un elemento que tiene z-index: 50 y otro 
+z-index: 100 entonces este segundo elemento prevalece sobre 
+el primero. TODO elemento HTML esta inicialmente con z-index 
+en 0, por tanto si se quiere mandar algo al final o fondo 
+de la pagina web usar un valor negativo.
+
+En esencia se esta jugando con el EJE Z de la pagina web si 
+llevamos a la imaginacion que la pagina web es un plano 
+cartesiano.
+
+5. Fixed Positioning
+
+Este posicionamiento sera relativa a la esquina supeior 
+izquierda de la VENTANA DEL NAVEGADOR.
+
+Como se ve en la pagina web de muestra descrita arriba si 
+marcamos la opcion Fixed veremos que si damos a la rueda del
+raton o bajamos con el scroll en la pagina web el cuadro verde
+seguira fija siempre visible porque estamos en version relativa 
+a la ventana del navegador. 
+A diferencia del posicionamiento relativo que esta fija 
+para la pagina web.
+  

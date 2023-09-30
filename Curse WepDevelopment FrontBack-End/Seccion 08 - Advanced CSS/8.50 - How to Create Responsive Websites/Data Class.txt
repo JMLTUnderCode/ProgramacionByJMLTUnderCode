@@ -1,0 +1,38 @@
+Seccion 08 - Clase 50
+
+Un termino importante en la programacion web es 
+RESPONSIVE eso se define como aquella propiedad
+que permite que tu pagina web sea vea bien y 
+estructurada en todo dispositivo web, esto es
+telefonos, tablet, laptops, computadora, etc.
+
+Las formas para conseguir este display responsivo 
+es por 
+
+1. Media Query
+
+@media (max-width: 600px){
+    /* CSS code for screen below or equal to 600px wide*/
+}
+
+Dentro de ee bloque de codigo iran los comando asociados
+al display de para una window menor o igual a 600px.
+
+2. CSS Grid
+
+Permite dise;ar una cuadricula de display, y es elegir
+los diferentes display en base a tus caracteristicas.
+Este modelo permite modificar y agregar cuadriculas en 
+dos dimenciones.
+
+3. Flexbox
+
+Esto al giau lque CSS Gird es para version de una 
+dimension, solo es para ordenar de manera vertical u 
+horizontal.
+
+4. Bootstrap Framework
+
+Se llama framework es porque es un metodo externo, es 
+decir no es algo que se construye en CSS como Grid 
+o Flexbox, pero en realidad es algo que tenemos

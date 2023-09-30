@@ -1,1 +1,86 @@
-Seccion 07 - Class 
+Seccion 07 - Class 43
+
+El estilo CSS = Cascading Style Sheets tiene una caracteristica
+importante basado en un flujo estilo cascada a la hora de 
+aplicar reglas/ atributos a un elemento HTML.
+
+En esencia cada componente CSS tiene una categoria
+definida en este orden de cascada. Siempre se aplica el 
+metodo que mas abajo este en la cascada.
+
+Entre los niveles de aplicacion de CSS a un HTML se tiene
+
+1. Posicion (Primero en aplicar)
+
+li {
+    color: red;
+    color: blue;
+}
+
+Dentro del archivo style.css siempre se aplica la ultima 
+linea cuando se habla de multiples instancias del mismo
+atributo. Ej, al tag li se torna color rojo pero luego
+viene blue y este es el color final. Incluso si al final
+del archivo CSS hay otra definicion del selector li y se 
+usa otro color entonces este sera el que se aplique.
+Es decir, una propiedad que se aplica siempre sera sustituida
+por otra instancia mas abajo.
+
+2. Especificacidad (Segundo en aplicar)
+
+Se tiene en el archivo CSS los siguientes selectores.
+
+li {color: blue;}
+.first-class {color: red;}
+li[draggable] {color: purple;}
+#first-id {color: orange;}
+
+Y un elemento HTML como sigue
+
+<li id="first-id" class="first-class" draggable>
+
+La especificacidad se refiere a lo especifico que es un 
+selector en terminos de los elementos a los que se aplica 
+la regla CSS. En el ejemplo mostrado se tienen 4 formas
+de apuntar al mismo tag li, y la especificacidad es un 
+concepto que tambien se extiende a los atributos, estos 
+tienen un orden.
+
+Se aplica los selectores generales. No es muy especifico.
+Luego, aplica los selectores por clase. Es mas especifico 
+que selectores generales.
+Luego, aplica los selectores por atributo. Indica mas 
+especificidad que los dos anteriores.
+Y finalmente, por selectores de ID el cual es unico Y
+es claro que tiene el mayor peso de todos, pues solo 
+se puede usar el id una vez.
+
+3. Tipo (Tercero en aplicar)
+
+Los tipos de aplicacion de CSS estan basados en
+
+Externo:
+<link rel="stylesheet" href="./style.css">
+
+Interno:
+<style> </style>
+
+En linea:
+<h1 style=" " >Hello</h1>
+
+Externo es por medio de link al archivo .css, usando 
+el metodo interno es por los tag style deltro den HTML
+y finalmente cuando se aplica directamente en linea del 
+elemento HTML la propiedad css.
+
+El orden y la jerarquia es, primero Externo con el menor
+peso, Interno con el peso medio y en linea con el mayor
+peso en jerarquia.
+
+ 4. Importancia (Cuarto en aplicar)
+
+ Eso es agregando, en la declaracion de el selector o en 
+ cualquier punto de la aplicacion de CSS, el termino 
+ "!important" indicando que no importa la posicion jerarquica
+ este sera la propiedad definitiva. 
+

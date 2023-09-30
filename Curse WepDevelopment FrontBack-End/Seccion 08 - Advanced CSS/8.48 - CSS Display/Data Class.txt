@@ -1,0 +1,33 @@
+Seccion 08 - Class 48
+
+Existen multiples formas de aplicar el metodo o comando
+"display" para mostrar elementos en un pagina web.
+
+Se hablan de tres formas basicas y esenciales, 
+display inline, block e inline-block.
+
+Por defecto escribir varios elementos en un archivo html
+conlleva al display top down, es decir cada elemento 
+va uno debajo del otro sin importar la anchura de la
+pagina web. 
+Si establecemos propiedades como 
+display: inline; 
+Entonces estariamos diciendo que el recuadro asociado
+al elemento sera del tamaño justo indicado por su 
+contenido, sin modificacion alguna de algura o anchura.
+
+En este caso cuando decimos inline entonces todos los
+elementos se mostraran en linea uno al lado del otro 
+hasta el borde final derecho de la pagina web.
+
+Por otro lado, si establecemos el criterio
+display: block;
+Entonces podremos modificar a diferencia del inline 
+el tamanio del box asociado al elemento. 
+
+Ahora una combinacion de ambas propiedades es 
+display: inline-block;
+Lo cual combina ambas propiedades, tendremos la opcion
+de modificar la algura y anchura del box como tambien
+mostrar varios elementos uno al lado del otro en una sola
+linea.
