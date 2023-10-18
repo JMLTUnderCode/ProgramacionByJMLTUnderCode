@@ -77,7 +77,7 @@ struct Memory{
 		for(auto it : INDENTIFIERS){
 			status = strcmp(new_iden.c_str(), it.c_str()) == 0;
 			if(status) {
-				cout << "     **-> ERROR 403 <-**\n          Este nombre ya tiene reservado memoria en el sistema. \n";
+				cout << "     **-> ERROR 406 <-**\n          Este nombre ya tiene reservado memoria en el sistema. \n";
 				return;
 			}
 		}
@@ -108,7 +108,7 @@ struct Memory{
 			// En caso de no encontrar un segmento que satisfaga la solicitud entonces
 			// retornamos un mensaje de error.
 			} else if (current->next == NULL) {
-				cout << "     **-> ERROR 402 <-**\n          No existe memoria suficiente para satisfacer la solicitud.\n";
+				cout << "     **-> ERROR 404 <-**\n          No existe memoria suficiente para satisfacer la solicitud.\n";
 				break;
 			
 			// Iterando por los nodos de la memoria
@@ -178,7 +178,7 @@ struct Memory{
 				current = current->next;
 			}
 		}
-		cout << "     **-> ERROR 404 <-**\n          No existe asignacion de memoria asociado a ese nombre.\n";
+		cout << "     **-> ERROR 405 <-**\n          No existe asignacion de memoria asociado a ese nombre.\n";
 	}
 	
 	// Procedimiento que permite mostrar por pantalla la cantidad de bloques en potencias
@@ -213,13 +213,14 @@ struct Memory{
 		}
 
 		// Mostramos la lista de nombres reservados con sus respectivos bloques.
-		current = head;
+		current = head; free_m = 0;
 		cout << "\n     ** Lista de nombres reservados:\n";
 		while(current != NULL){
 			if(strcmp(current->indentifier.c_str(), "") != 0){
 				cout << "        -- " << current->indentifier << ": " << current->blocks << " bloques.\n";
+			} else {
 				free_m += current->blocks;
-			} 
+			}
 			current = current->next;
 		}
 
@@ -264,7 +265,7 @@ int main(int argc, char const *argv[]) {
 
 			// Verificacion de parametros.
 			if(parameters.size() < 1 || parameters.size() > 3){
-				cout << "     **-> ERROR 406: Faltan o excede el numero de argumentos permitidos.\n";
+				cout << "     **-> ERROR 401: Faltan o excede el numero de argumentos permitidos.\n";
 				continue;
 			}
 
@@ -275,7 +276,7 @@ int main(int argc, char const *argv[]) {
   			if(strcmp("RESERVAR", command_cov) == 0){
   				it++; n_block = atoi(it->c_str());
 				if(n_block == 0){
-					cout << "     **-> ERROR 401 <-**\n          Numero de bloques erroneo.\n";
+					cout << "     **-> ERROR 402 <-**\n          Sintaxis erronea. Ingrese HELP para mostrar los comandos disponibles.\n";
 					continue;
 				}
   				it++; name = *it;
@@ -293,14 +294,14 @@ int main(int argc, char const *argv[]) {
 				
 			} else if (strcmp("HELP", command_cov) == 0){
 				cout << "     Lista de comandos para Buddy System Simulation:\n";
-				cout << "          - RESERVAR:  \n";
-				cout << "          - LIBERAR:  \n";
-				cout << "          - MOSTRAR:  \n";
-				cout << "          - SALIR:  \n";
+				cout << "          - RESERVAR <capacidad(int)> <nombre(string)> \n";
+				cout << "          - LIBERAR <nombre(string)> \n";
+				cout << "          - MOSTRAR  \n";
+				cout << "          - SALIR  \n";
 				cout << "     Se permiten sus respectivas versiones en minusculas.\n";
 				
   			} else {
-  				cout << "     **-> ERROR 401 <-**\n          Comando invalido. Ingrese HELP para mostrar los comandos disponibles.\n";
+  				cout << "     **-> ERROR 403 <-**\n          Comando invalido. Ingrese HELP para mostrar los comandos disponibles.\n";
 			}
 		}
     } else {
