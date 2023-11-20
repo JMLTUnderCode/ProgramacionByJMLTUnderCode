@@ -74,11 +74,11 @@ class Operation():
                 # Como se invirtio inicialmente para el caso PRE y manejarlo como una version POST,
                 # entonces se debe operar de manera original.
                 if operation_mode.upper() == "PRE":
-                    result = last_element + " " + symbols + " " + second_last_element
+                    result = f"{last_element} {symbols} {second_last_element}"
 
                 # Operamos para version POST.
                 if operation_mode.upper() == "POST":
-                    result = second_last_element + " " + symbols + " " + last_element
+                    result = f"{second_last_element} {symbols} {last_element}"
 
                 # Se hace pop mediante el cut de lista (:) y se push el resultado.
                 self.stack_mostrar = self.stack_mostrar[:-2]
