@@ -1,0 +1,7 @@
+              abierta    cerrada    cerrada    cerrada    cerrada    cerrada    60
+
+Valvulas       V101       V102       V103       V201       V202       V203      tiempo de rotación(sg)
+
+Para cada valvula solo se admiten las siguientes combinaciones de caracteres: "abierta" o "cerrada". 
+Se admiten versiones donde cualquier caracter descrito en "abierta" o "cerrada" este en version
+minuscula o mayuscula. Es decir, es valido "Abierta", "ABIERTA", "abIERTa", etc.
