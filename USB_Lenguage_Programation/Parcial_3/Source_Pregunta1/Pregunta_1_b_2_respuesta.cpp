@@ -88,7 +88,8 @@ public:
     }
 };
 
-// Búsqueda en profundidad   
+// Clase DFS que simula la busqueda en profundidad mediante el
+// uso de pilas.
 class DFS : public Busqueda {
 public:
     int buscar(Grafo g, int D, int H) {
@@ -120,7 +121,8 @@ public:
     }
 };
 
-// Búsqueda en amplitud
+// Clase BFS que simula la busqueda en amplitud mediante el
+// uso de colas.
 class BFS : public Busqueda {
 public:
     int buscar(Grafo g, int D, int H) {
@@ -186,16 +188,23 @@ int main() {
     g.agregarArista(14, 13);
     g.agregarArista(15, 13);
     
-    int D = 1;
-    int H = 4;
+    int D;
+    int H;
+    cout << "\n* ~/ >> Indique nodo origen D: "; cin >> D;
+    cout << "* ~/ >> Indique nodo destino H: "; cin >> H;
 
     DFS dfs;
     int explorados_dfs = dfs.buscar(g, D, H);
-    printf("\nDesde %d a %d con DFS: %d nodos explorados.\n", D, H, explorados_dfs);
 
     BFS bfs;
     int explorados_bfs = bfs.buscar(g, D, H);
-    printf("\nDesde %d a %d con BFS: %d nodos explorados.\n\n", D, H, explorados_bfs);
+
+    if(explorados_dfs == -1 || explorados_bfs == -1 ) {
+        cout << "\n* ~/ >> ** No existe camino entre D y H. **\n\n";
+    } else { 
+        printf("\n* ~/ >> Desde %d a %d con DFS: %d nodos explorados.\n", D, H, explorados_dfs);
+        printf("\n* ~/ >> Desde %d a %d con BFS: %d nodos explorados.\n\n", D, H, explorados_bfs);
+    }
 
     return 0;
 }

@@ -58,6 +58,7 @@ def main():
             error = DataTable.ERROR_DESCRIBIR
             if error != "":
                 print(f"* ~/ >> -" + error + ("-" + " "*(67 - len(error))) + "*")
+                continue
 
             print(f"*        Virtual Methods Table of {parameters[1]}" + (" "*(43 - len(parameters[1]))) + "*") 
             if len(descriptions) != 0:

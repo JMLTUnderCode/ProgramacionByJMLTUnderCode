@@ -141,7 +141,7 @@ int main() {
     // Pila de strings
     Pila<string> pilaStrings;
     pilaStrings.agregar("hola");
-    pilaStrings.agregar("mundo");
+    pilaStrings.agregar("prosol");
     pilaStrings.agregar("!");  
     cout << endl;
     for(int i = 0; i < 3; i++) cout << "     " << pilaStrings.remover() << endl;
@@ -166,7 +166,7 @@ int main() {
     // Cola de strings
     Cola<string> colaStrings;
     colaStrings.agregar("hola");
-    colaStrings.agregar("mundo");
+    colaStrings.agregar("prosol");
     colaStrings.agregar("!");  
     cout << endl;
     for(int i = 0; i < 3; i++) cout << "     " << colaStrings.remover() << endl;
