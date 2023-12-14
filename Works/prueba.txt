@@ -1,4 +1,4 @@
-              abierta    cerrada    cerrada    cerrada    cerrada    cerrada    60
+              abierta    abierta    abierta    abierta    abierta    abierta    30
 
 Valvulas       V101       V102       V103       V201       V202       V203      tiempo de rotación(sg)
 

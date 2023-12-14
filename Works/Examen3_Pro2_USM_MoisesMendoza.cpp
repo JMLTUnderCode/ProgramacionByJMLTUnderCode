@@ -29,6 +29,10 @@
 	4)  Se asume que maximo pueden estar trabajando 2 bombas a la vez. Esto quiere decir que no existe el caso
 		en que 3 bombas estan trabajando. Ya luego si existe la opcion de encender 3 bombas, entonces se prenden
 		2 para luego realizar la rotacion de trabajo. Pero siempre estaran prendidas 2 de poder encender 2.
+		
+	5)	Las condiciones de encendido es que una vez llegado a los 50 psi se apaga la bomba por seguridad, luego
+		se debe esperar a que la presion llegue a 20 psi para poder encenderse, siempre y cuando el switch de 
+		floju indique que hay etileno.
 */
 
 #include <iostream> 	// Mostrar datos en pantalla
@@ -93,6 +97,11 @@ int main(){
 	float tiempo_bomba_P102 = 0.0;
 	float tiempo_bomba_P103 = 0.0;
 	
+	// Condicion de encendido de bomba para presion maxima.
+	bool no_falla_bomba_P101 = true;
+	bool no_falla_bomba_P102 = true;
+	bool no_falla_bomba_P103 = true;
+	
 	inicio:
 	
 	// Lectura de valvulas del archivo "prueba.txt" que debe estar en el mismo directorio que este programa.
@@ -146,14 +155,14 @@ int main(){
 	// Bomba 1
 	if (tiempo_bomba_P101 >= tiempo_rotacion/10.0 && bombas_encendidas < 3 && cuantas_bombas_pueden_encender > 0){
 		// Verificamos si la bomba 2 esta disponible.
-		if (switch_FS202 == "NORMAL" && bomba_P102 == "APAGADA" && presion_PT202 < 50){
+		if (switch_FS202 == "NORMAL" && bomba_P102 == "APAGADA" && no_falla_bomba_P102){
 			bomba_P101 = "APAGADA";
 			bomba_P102 = "ENCENDIDA";
 			tiempo_bomba_P101 = 0;
 			tiempo_bomba_P102 = 0;
 			
 		// Sino, verificamos si la bomba 3 esta disponible.
-		} else if (switch_FS203 == "NORMAL" && bomba_P103 == "APAGADA" && presion_PT203 < 50){
+		} else if (switch_FS203 == "NORMAL" && bomba_P103 == "APAGADA" && no_falla_bomba_P103){
 			bomba_P101 = "APAGADA";
 			bomba_P103 = "ENCENDIDA";
 			tiempo_bomba_P101 = 0;
@@ -162,14 +171,14 @@ int main(){
 	// Bomba 2
 	} else if (tiempo_bomba_P102 >= tiempo_rotacion/10.0 && bombas_encendidas < 3 && cuantas_bombas_pueden_encender > 0){
 		// Verficamos si la bomba 1 esta disponible.
-		if (switch_FS201 == "NORMAL" && bomba_P101 == "APAGADA" && presion_PT201 < 50){
+		if (switch_FS201 == "NORMAL" && bomba_P101 == "APAGADA" && no_falla_bomba_P101){
 			bomba_P102 = "APAGADA";
 			bomba_P101 = "ENCENDIDA";
 			tiempo_bomba_P102 = 0;
 			tiempo_bomba_P101 = 0;
 			
 		// Sino verificamos si la bomba 3 esta disponible.
-		} else if (switch_FS203 == "NORMAL" && bomba_P103 == "APAGADA" && presion_PT203 < 50){
+		} else if (switch_FS203 == "NORMAL" && bomba_P103 == "APAGADA" && no_falla_bomba_P103){
 			bomba_P102 = "APAGADA";
 			bomba_P103 = "ENCENDIDA";
 			tiempo_bomba_P102 = 0;
@@ -178,14 +187,14 @@ int main(){
 	// Bomba 3
 	} else if (tiempo_bomba_P103 >= tiempo_rotacion/10.0 && bombas_encendidas < 3 && cuantas_bombas_pueden_encender > 0){
 		// Verificamos si la bomba 1 esta disponible.
-		if (switch_FS201 == "NORMAL" && bomba_P101 == "APAGADA" && presion_PT201 < 50){
+		if (switch_FS201 == "NORMAL" && bomba_P101 == "APAGADA" && no_falla_bomba_P101){
 			bomba_P103 = "APAGADA";
 			bomba_P101 = "ENCENDIDA";
 			tiempo_bomba_P103 = 0;
 			tiempo_bomba_P101 = 0;
 			
 		// Sino, verificamos si la bomba 2 esta disponible.
-		} else if (switch_FS202 == "NORMAL" && bomba_P102 == "APAGADA" && presion_PT202 < 50){
+		} else if (switch_FS202 == "NORMAL" && bomba_P102 == "APAGADA" && no_falla_bomba_P102){
 			bomba_P103 = "APAGADA";
 			bomba_P102 = "ENCENDIDA";
 			tiempo_bomba_P103 = 0;
@@ -223,7 +232,7 @@ int main(){
 	
 	// Control de la bomba segun el switch de flujo.
 	// Encendemos Bomba 1 si cumple las condiciones de encendido, o en su defecto apagarga.
-	if (bomba_P101 == "APAGADA" && switch_FS201 == "NORMAL" && bombas_encendidas < 2 && presion_PT201 < 50) {
+	if (bomba_P101 == "APAGADA" && switch_FS201 == "NORMAL" && bombas_encendidas < 2 && no_falla_bomba_P101) {
 		bombas_encendidas++;
 		cuantas_bombas_pueden_encender--;
 		tiempo_bomba_P101 = 0;
@@ -235,7 +244,7 @@ int main(){
 		bomba_P101 = "APAGADA";
 	}
 	// Encendemos Bomba 2 si cumple las condiciones de encendido, o en su defecto apagarga.
-	if (bomba_P102 == "APAGADA" && switch_FS202 == "NORMAL" && bombas_encendidas < 2 && presion_PT202 < 50) {
+	if (bomba_P102 == "APAGADA" && switch_FS202 == "NORMAL" && bombas_encendidas < 2 && no_falla_bomba_P102) {
 		bombas_encendidas++;
 		cuantas_bombas_pueden_encender--;
 		tiempo_bomba_P102 = 0;
@@ -248,7 +257,7 @@ int main(){
 		bomba_P102 = "APAGADA";
 	}
 	// Encendemos Bomba 3 si cumple las condiciones de encendido, o en su defecto apagarga.
-	if (bomba_P103 == "APAGADA" && switch_FS203 == "NORMAL" && bombas_encendidas < 2 && presion_PT203 < 50) {
+	if (bomba_P103 == "APAGADA" && switch_FS203 == "NORMAL" && bombas_encendidas < 2 && no_falla_bomba_P103) {
 		bombas_encendidas++;
 		cuantas_bombas_pueden_encender--;
 		tiempo_bomba_P103 = 0;
@@ -278,56 +287,66 @@ int main(){
 	
 	
 	// Correccion de presiones.
-	if (presion_PT201 >= 50) presion_PT201 = 50.0;
+	if (presion_PT201 > 50) presion_PT201 = 50.0;
 	if (presion_PT201 < 0 ) presion_PT201 = 0.0;
 	
-	if (presion_PT202 >= 50) presion_PT202 = 50.0;
+	if (presion_PT202 > 50) presion_PT202 = 50.0;
 	if (presion_PT202 < 0 ) presion_PT202 = 0.0;
 	
-	if (presion_PT203 >= 50) presion_PT203 = 50.0;
+	if (presion_PT203 > 50) presion_PT203 = 50.0;
 	if (presion_PT203 < 0 ) presion_PT203 = 0.0;
 	
 	
 	// Control de la bomba segun la presion.
 	// Se debe verificar el estado actual de la presion para asi realizar el encendido de la misma.
 	// Para bomba 1
-	if (bomba_P101 == "APAGADA" && switch_FS201 == "NORMAL" && presion_PT201 < 50 && bombas_encendidas < 2 && cuantas_bombas_pueden_encender > 0){
+	if (bomba_P101 == "APAGADA" && switch_FS201 == "NORMAL" && presion_PT201 < 20 && bombas_encendidas < 2 && cuantas_bombas_pueden_encender > 0){
+		no_falla_bomba_P101 = true;
 		bombas_encendidas++;
 		cuantas_bombas_pueden_encender--;
 		tiempo_bomba_P101 = 0;
 		bomba_P101 = "ENCENDIDA";
 	} else if (bomba_P101 == "ENCENDIDA" && presion_PT201 >= 50) {
+		no_falla_bomba_P101 = false;
 		bombas_encendidas--;
 		cuantas_bombas_pueden_encender++;
 		tiempo_bomba_P101 = 0;
 		bomba_P101 = "APAGADA";
 	}
 	// Para bomba 2
-	if (bomba_P102 == "APAGADA" && switch_FS202 == "NORMAL" && presion_PT202 < 50 && bombas_encendidas < 2 && cuantas_bombas_pueden_encender > 0){
+	if (bomba_P102 == "APAGADA" && switch_FS202 == "NORMAL" && presion_PT202 < 20 && bombas_encendidas < 2 && cuantas_bombas_pueden_encender > 0){
+		no_falla_bomba_P102 = true;
 		bombas_encendidas++;
 		cuantas_bombas_pueden_encender--;
 		tiempo_bomba_P102 = 0;
 		bomba_P102 = "ENCENDIDA";
-		cout << "check\n";
 	} else if (bomba_P102 == "ENCENDIDA" && presion_PT202 >= 50) {
+		no_falla_bomba_P102 = false;
 		bombas_encendidas--;
 		cuantas_bombas_pueden_encender++;
 		tiempo_bomba_P102 = 0;
 		bomba_P102 = "APAGADA";
 	}
 	// Para bomba 3
-	if (bomba_P103 == "APAGADA" && switch_FS203 == "NORMAL" && presion_PT203 < 50 && bombas_encendidas < 2 && cuantas_bombas_pueden_encender > 0){
+	if (bomba_P103 == "APAGADA" && switch_FS203 == "NORMAL" && presion_PT203 < 20 && bombas_encendidas < 2 && cuantas_bombas_pueden_encender > 0){
+		no_falla_bomba_P103 = true;
 		bombas_encendidas++;
 		cuantas_bombas_pueden_encender--;
 		tiempo_bomba_P103 = 0;
 		bomba_P103 = "ENCENDIDA";
 	} else if (bomba_P103 == "ENCENDIDA" && presion_PT203 >= 50) {
+		no_falla_bomba_P103 = false;
 		bombas_encendidas--;
 		cuantas_bombas_pueden_encender++;
 		tiempo_bomba_P103 = 0;
 		bomba_P103 = "APAGADA";
 	}
 	
+	
+	// Revision adicional si una bomba deja de estar en modo fallo.
+	if (!no_falla_bomba_P101 && presion_PT201 < 20) no_falla_bomba_P101 = true;
+	if (!no_falla_bomba_P102 && presion_PT202 < 20) no_falla_bomba_P102 = true;
+	if (!no_falla_bomba_P103 && presion_PT203 < 20) no_falla_bomba_P103 = true;
 	
 	// Control de Etileno y estabilizacion de presion.
 	etileno_circulando = 0;
@@ -356,14 +375,6 @@ int main(){
 	
 	// Control del tiempo total del sistema en funcionamiento general.
 	tiempo_total++;
-	
-	/*
-	cout << bombas_encendidas << endl;
-	cout << cuantas_bombas_pueden_encender << endl;
-	cout << bomba_P101 << " " << bomba_P102 << " " << bomba_P103 << "\n";
-	cout << tiempo_bomba_P101 << " " << tiempo_bomba_P102 << " " << tiempo_bomba_P103 << "\n";
-	system("pause");
-	*/
 	
 	//  Establecemos un tiempo de 1 de segundo para ver los cambios de la pantalla
     Sleep (1000);
