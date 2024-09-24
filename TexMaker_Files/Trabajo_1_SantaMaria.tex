@@ -1,0 +1,204 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{Tarea: Universidad Santa Maria}
+\date{today}
+
+\begin{document}
+
+\begin{center}
+Tarea: Universidad Santa Maria
+\end{center}
+
+Se pide determinar la siguiente expresion matemarica
+
+\begin{center}
+$BA + \dfrac{1}{2}(3C + 4D)^2$
+\end{center}
+
+Donde se tiene las siguientes declaraciones matriciales:
+
+$\\ A = \left [ \begin{matrix}
+	3 & 4 & 7\\
+	2 & 1 & 5\\
+	1 & 0 & 3\\
+\end{matrix}\right ]
+;~~~B = \left [ \begin{matrix}
+	-2 & -7 & -3\\
+	 3 &  4 &  2\\
+	 1 &  2 &  3\\
+\end{matrix}\right ]
+;~~~C = \left [ \begin{matrix}
+	 3 & -2 &  1\\
+	-3 & -2 & -1\\
+	-1 &  2 &  0\\
+\end{matrix}\right ]
+;~~~D = \left [ \begin{matrix}
+	 1 & -2 & -3\\
+	-1 &  2 &  3\\
+	-2 &  3 &  4\\
+\end{matrix}\right ] 
+\\\\\\
+$ 
+
+Abordando este problemas por partes, veamos por un lado que BA es calculable ya que B tiene dimensiones 3x3 (3 filas y 3 columnas) y A tiene dimensiones 3x3 (3 filas y 3 columnas) lo que nos permite verificar la condicion fundamental de multiplicaciones de matrices, es decir la cantidad de columnas de la matriz a izquierda(matriz B) es igual a la cantidad de filas de la matriz a derecha (matriz A), del cual tendremos como resultado una matriz 3x3. Asi;
+
+$\\ BA = \left [ \begin{matrix}
+	-2 & -7 & -3\\
+	 3 &  4 &  2\\
+	 1 &  2 &  3\\
+\end{matrix}\right ] \times
+\left [ \begin{matrix}
+	3 & 4 & 7\\
+	2 & 1 & 5\\
+	1 & 0 & 3\\
+\end{matrix}\right ]
+\\\\\\= \left [ \begin{matrix}
+	(-2)(3)+(-7)(2)+(-3)(1) & (-2)(4)+(-7)(1)+(-3)(0) & (-2)(7)+(-7)(5)+(-3)(3)\\
+	(3)(3)+(4)(2)+(2)(1) & (3)(4)+(4)(1)+(2)(0) & (3)(7)+(4)(5)+(2)(3)\\
+	(1)(3)+(2)(2)+(3)(1) & (1)(4)+(2)(1)+(3)(0) & (1)(7)+(2)(5)+(3)(3)\\
+\end{matrix}\right ]
+\\\\\\= \left [ \begin{matrix}
+	(-6)+(-14)+(-3) & (-8)+(-7)+(0) & (-14)+(-35)+(-9)\\
+	(9)+(8)+(2) & (12)+(4)+(0) & (21)+(20)+(6)\\
+	(3)+(4)+(3) & (4)+(2)+(0) & (7)+(10)+(9)\\
+\end{matrix}\right ]
+= \left [ \begin{matrix}
+	-23 & -15 & -58\\
+	 19 &  16 &  47\\
+	 10 &   6 &  26\\
+\end{matrix}\right ]
+\\\\\\ \implies BA = \left [ \begin{matrix}
+	-23 & -15 & -58\\
+	 19 &  16 &  47\\
+	 10 &   6 &  26\\
+\end{matrix}\right ]
+\\\\ $
+
+Ahora por otro lado calculemos solamente "3C + 4D". Asi;
+
+$\\\\ 3C + 4D = 3\times
+\left [ \begin{matrix}
+	 3 & -2	&  1 \\
+	-3 & -2 & -1 \\
+	-1 &  2 &  0 \\
+\end{matrix}\right ]
+~ + ~ 4\times
+\left [ \begin{matrix}
+	 1 & -2 & -3 \\
+	-1 &  2 &  3 \\
+	-2 &  3 &  4 \\
+\end{matrix}\right ]
+= \left [ \begin{matrix}
+	 9 & -6	&  3 \\
+	-9 & -6 & -3 \\
+	-3 &  6 &  0 \\
+\end{matrix}\right ]
+~ + ~
+\left [ \begin{matrix}
+	 4 & -8 & -12 \\
+	-4 &  8 &  12 \\
+	-8 & 12 &  16 \\
+\end{matrix}\right ]
+\\\\\\= \left [ \begin{matrix}
+	9+4 & -6+(-8) & 3+(-12) \\
+	-9+(-4) & -6+8 & -3+12 \\
+	-3+(-8) & 6+12 & 0+16 \\
+\end{matrix}\right ]
+= \left [ \begin{matrix}
+	 13 & -14 & -9 \\
+	-13 &   2 &  9 \\
+	-11 &  18 & 16 \\
+\end{matrix}\right ]
+\\\\\\ \implies 3C + 4D = \left [ \begin{matrix}
+	 13 & -14 & -9 \\
+	-13 &   2 &  9 \\
+	-11 &  18 & 16 \\
+\end{matrix}\right ]
+\\\\\\ $
+
+Debemos determinar ahora el cuadrado de lo calculado anteriormente, esto es $(3C + 4D)^2 = (3C + 4D)(3C + 4D)$, donde "3C + 4D" posee dimensiones de 3 filas por 3 columnas, por tanto la condicion fundamental de matrices se cumple, claro esta. Asi;
+
+$(3C + 4D)^2 = (3C + 4D)(3C + 4D) = \left [ \begin{matrix}
+	 13 & -14 & -9 \\
+	-13 &   2 &  9 \\
+	-11 &  18 & 16 \\
+\end{matrix}\right ] \times
+\left [ \begin{matrix}
+	 13 & -14 & -9 \\
+	-13 &   2 &  9 \\
+	-11 &  18 & 16 \\
+\end{matrix}\right ]
+\\\\\\= \left [ \begin{matrix}
+	13*13+(-14)*(-13)+(-9)*(-11) & 13*(-14)+(-14)*2+(-9)*18 & 13*(-9)+(-14)*9+(-9)*16 \\
+	-13*13+2*(-13)+9*(-11) & -13*(-14)+2*2+9*18 & -13*(-9)+2*9+9*16 \\
+    -11*13+18*(-13)+16*(-11) & -11*(-14)+18*2+16*18 & -11*(-9)+18*9+16*16 \\
+\end{matrix}\right ]
+\\\\\\=  \left [ \begin{matrix}
+	 450	 & -372 & -387 \\
+	-294	 &  348 &  279 \\ 
+	-553	 &  478 &  517 \\
+\end{matrix}\right ] \implies (3C + 4D)^2 = \left [ \begin{matrix}
+	 450	 & -372 & -387 \\
+	-294	 &  348 &  279 \\ 
+	-553	 &  478 &  517 \\
+\end{matrix}\right ]
+\\\\\\ $
+
+En este sentido incluimos el escalar $1/2$ que nos falta. Asi;
+
+$\dfrac{1}{2}(3C+4D)^2 = \dfrac{1}{2}\left [ \begin{matrix}
+	 450	 & -372 & -387 \\
+	-294	 &  348 &  279 \\ 
+	-553	 &  478 &  517 \\
+\end{matrix}\right ]
+= \left [ \begin{matrix}
+	 225 & -186 & \dfrac{-387}{2} \\ 
+	-147 & 174	 & \dfrac{279}{2} \\
+	\dfrac{-553}{2} & 239	 & \dfrac{517}{2} \\
+\end{matrix}\right ]$ 
+
+Finalmente, realizamos la suma de ambos cálculos;
+
+$\\\\ BA + \dfrac{1}{2}(3C + 4D)^2 = \left [ \begin{matrix}
+	-23 & -15 & -58\\
+	 19 &  16 &  47\\
+	 10 &   6 &  26\\
+\end{matrix}\right ] 
+~ + ~ \left [ \begin{matrix}
+	 225 & -186 & \dfrac{-387}{2} \\ 
+	-147 & 174 & \dfrac{279}{2} \\
+	\dfrac{-553}{2} & 239 & \dfrac{517}{2} \\
+\end{matrix}\right ]
+\\\\\\= \left [ \begin{matrix}
+	-23+225 & -15+(-186) & -58+\dfrac{-387}{2} \\
+	19+(-147) & 16+174 & 47+\dfrac{279}{2} \\
+	10+\dfrac{-553}{2} & 6+239 & 26+\dfrac{517}{2} \\
+\end{matrix}\right ] 
+= \left [ \begin{matrix}
+	202 & -201 & \dfrac{-503}{2} \\
+	-128 & 190 & \dfrac{373}{2} \\
+	\dfrac{-533}{2} & 245 & \dfrac{569}{2} \\
+\end{matrix}\right ] \\\\ $
+
+En conclusion, 
+
+\begin{center}
+$BA + \dfrac{1}{2}(3C + 4D)^2  = \left [ \begin{matrix}
+	202 & -201 & \dfrac{-503}{2} \\
+	-128 & 190 & \dfrac{373}{2} \\
+	\dfrac{-533}{2} & 245 & \dfrac{569}{2} \\
+\end{matrix}\right ]$
+\end{center}
+
+\end{document}

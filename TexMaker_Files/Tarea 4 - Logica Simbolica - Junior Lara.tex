@@ -1,0 +1,75 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{TAREA 4}
+\author{Junior Miguel Lara Torres}
+\date{today}
+
+\graphicspath {{C:/Users/JuniorLara/Desktop/TexMaker_Files/}}
+\begin{document}
+
+\begin{center}
+\par \includegraphics[scale=1]{USB} \par
+Universidad Simón Bolívar \\ Curso: CI2511 / Lógica Simbólica \\ Trimestre: Abril-Julio, 2021 \\ Profesor: Carolina Chang Tovar \\ Estudiante: Junior Miguel Lara Torres - Carnet: 17-10303 \\
+\end{center}
+
+\begin{center}
+TAREA 4
+\end{center}
+
+Modele el siguiente argumento en Lógica de Predicados. Tome el Universo como el dominio del discurso. Indique predicados,  símbolos funcionales y constantes (y sus tipos): \\
+
+"Los preparadores que atienden a estudiantes sin dudas no tienen diversión. Un preparador que atiende a un estudiante que tiene dudas sobre todos los temas tiene un trabajo que nadie le envidiaría.  Hay una preparadora de Lógica Simbólica que solo atiende a estudiantes cohorte 13 o posterior que tengan dudas sobre el tema Meta-Teorema del Testigo. Pedro Pérez  es atendido por esa preparadora, aunque él también tiene dudas sobre otros temas. Solamente hay un estudiante más que tiene las mismas dudas que Pedro Pérez." $ \\ $ $ \\ $ 
+Dominio: Universo (U)$ \\ $
+Predicados: $ \\ $
+$~~~~~~~~~~~~~~$ Pre(x):~ 'x' es un preparador. Pre: $ U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ Est(x):~ 'x' es un estudiante. Est: $ U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ Per(x):~ 'x' es una persona. Per: $ U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ M(x):~ 'x' es una materia. M: $ U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ T(x):~ 'x' es un tema. T: $ U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ Ati(x,y):~ 'x' atiende a 'y'. Ati: $ U \times U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ Dud(x,y):~ 'x' tiene dudas de 'y'. Dud: $ U \times U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ Div(x):~ 'x' se divierte. Div: $ U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ Tra(x):~ 'x' tiene trabajo. Tra: $ U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ En(x,y):~ 'x' envidia el trabajo de 'y' . En: $ U \times U \to \mathbb{B} \\ $
+$~~~~~~~~~~~~~~$ Cohor(x):~ Cohorte del estudiante 'x'. Cohor: $ U \to \mathbb{Z} \\ $
+$~~~~~~~~~~~~~~$ PreDe(x,y):~ 'x' es preparador de 'y'. PreDe: $ U \times U \to \mathbb{B} \\ $
+
+Constantes:$ \\ $
+$~~~~~~~~~~~~~~$ 'MTT':~ Meta-Teorema del Testigo. MTT: Tema $ \\ $
+$~~~~~~~~~~~~~~$ 'PP':~ Pedro Pérez. PP: Estudiante $ \\ $
+$~~~~~~~~~~~~~~$ 'LS':~ Lógica Simbólica. LS: Materia $ \\ $
+$ \\ $
+$ \\ $
+$ \\ $
+$ \\ $
+$ \\ $
+$ \\ $
+$ \\ $
+Modelado por partes: (Consejo del Chus) $ \\ $
+
+¨Los preparadores que atienden a estudiantes sin dudas no tienen diversión.¨ $ \\ $
+$ (\forall x | Pre(x)  \land (\forall y | Est(y)  \land  (\forall z | T(z):\neg Dud(y,z)) : Ati(x,y)): \neg Div(x)) \\ $
+
+¨Un preparador que atiende a un estudiante que tiene dudas sobre todos los temas tiene un trabajo que nadie le envidiaría.¨ $ \\ $
+$ (\forall x | Pre(x) \land (\forall y | Est(y) \land (\forall z | T(z) : Dud(y,z)) : Ati(x,y)): Tra(x) \land \neg (\exists p| Per(p): En(p,x))) \\  $
+
+¨Hay una preparadora de Lógica Simbólica que solo atiende a estudiantes cohorte 13 o posterior que tengan dudas sobre el tema Meta-Teorema del Testigo. Pedro Pérez  es atendido por esa preparadora, aunque él también tiene dudas sobre otros temas.¨ $ \\ $
+$ (\exists x| PreDe(x,'LS') : (\forall y | Est(y) \land Cohor(y) \geq 13 \land Dud(y,'MTT') : Ati(x,y)) \land Ati(x,'PP') \land (\exists z | T(z) \land z \neq 'MTT' : Dud('PP',z))) \\ $
+
+¨Solamente hay un estudiante más que tiene las mismas dudas que Pedro Pérez.¨  $ \\ $
+$ (\exists x | Est(x) : (\forall z |T(z) \land Dud('PP',z): Dud(x,z) \land \neg (\exists y |Est(y) \land y \neq x : Dud(y,z)))) \\ $ 
+
+Modelado Completo:  $ \\ $
+$(\forall x | Pre(x)  \land (\forall y | Est(y)  \land  (\forall z | T(z):\neg Dud(y,z)) : Ati(x,y)): \neg Div(x))          ~~ \land ~~ ( \forall x | Pre(x) \land (\forall y | Est(y) \land (\forall z | T(z) : Dud(y,z)) : Ati(x,y)): Tra(x) \land \neg (\exists p| Per(p): En(p,x))) ~~ \land ~~ (\exists x| PreDe(x,'LS') : (\forall y | Est(y) \land Cohor(y) \geq 13 \land Dud(y,'MTT') : Ati(x,y)) \land Ati(x,'PP') \land (\exists z | T(z) \land z \neq 'MTT' : Dud('PP',z)))  ~~ \land ~~ (\exists x | Est(x) : (\forall z |T(z) \land Dud('PP',z): Dud(x,z) \land \neg (\exists y |Est(y) \land y \neq x : Dud(y,z))))$
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{TAREA 2}
+\author{Junior Miguel Lara Torres}
+\date{today}
+
+\graphicspath {{C:/Users/JuniorLara/Desktop/TexMaker_Files/}}
+\begin{document}
+
+\begin{center}
+\par \includegraphics[scale=1]{USB} \par
+Universidad Simon Bolivar \\ Curso: CI2511 / Logica Simbolica \\ Trimestre: Abril-Julio, 2021 \\ Profesor: Carolina Chang Tovar \\ Estudiante: Junior Miguel Lara Torres - Carnè: 17-10303 \\
+\end{center}
+
+\begin{center}
+TAREA 2
+\end{center}
+
+Pregunta 0: \\
+
+Si la siguiente expresión es un teorema, demuéstrelo formalmente utilizando el método directo (e indicando X, Y, E). En caso contrario, muestre detalladamente un estado en el que la expresión se evalúe falsa.\\
+
+$ E: p \equiv q \wedge (p \equiv q) \equiv q \vee (\neg q \equiv q \wedge \neg p \equiv p)\equiv q $ \\
+
+Para verificar la veracidad de la expresión, de ser o no un teorema, veamos que al considerar el estado p=1 y q=0, se tiene que; \\ $ \\ 
+\implies 1 \equiv 0 \wedge (1 \equiv 0) \equiv 0 \vee (\neg 0 \equiv 0 \wedge \neg 1\equiv 1)\equiv 0 \\ 
+\implies 1 \equiv 0 \wedge (1 \equiv 0) \equiv 0 \vee (1 \equiv 0 \wedge 0 \equiv 1) \equiv 0 \\
+\implies 1 \equiv (0 \wedge 0) \equiv 0 \vee ( 1 \equiv 0 \wedge 0 \equiv 1) \equiv 0 \\
+\implies (1 \equiv 0) \equiv 0 \vee (1 \equiv 0 \wedge 0 \equiv 1) \equiv 0 \\
+\implies 0 \equiv 0 \vee (1 \equiv (0 \wedge 0) \equiv 1) \equiv 0 \\
+\implies 0 \equiv 0 \vee ((1 \equiv 0) \equiv 1) \equiv 0 \\
+\implies 0 \equiv 0 \vee (0 \equiv 1) \equiv 0 \\
+\implies 0 \equiv (0 \vee 0) \equiv 0 \\
+\implies (0 \equiv 0)\equiv 0 \\
+\implies 1 \equiv 0 \\
+\implies 0 $ \\
+
+Por lo tanto hemos encontrado al menos un estado e, tal que eval(E,e)=0 por lo que podemos afirmar que la expresión E no es una expresión Válida o Tautología. \\ 
+
+
+\end{document}

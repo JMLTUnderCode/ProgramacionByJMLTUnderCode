@@ -1,0 +1,142 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{(3.37) El meme}
+\author{Junior Miguel Lara Torres}
+\date{today}
+
+\graphicspath {{C:/Users/JuniorLara/Desktop/TexMaker_Files/}}
+\begin{document}
+
+\begin{center}
+\par \includegraphics[scale=1]{USB} \par
+Universidad Simon Bolivar \\ Curso: CI2511 / Logica Simbolica \\ Trimestre: Abril-Julio, 2021 \\ Estudiante: Junior Lara - 17-10303 \\
+\end{center}
+
+\begin{center}
+El 3.37 Alias El innombrable.
+\end{center}
+
+Demuestre: (3.37) Associativity of $\wedge$: $(p \wedge q)\wedge r \equiv p \wedge (q \wedge r)$  \\
+
+Partiendo del lado izquierdo  $(p \wedge q)\wedge r: \\ \\ $ 
+$                 ~~~~~~~~(p \wedge q)\wedge r \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.35)~~ p\wedge q \equiv p \equiv q \equiv p \vee q, \\ 
+X=p\wedge q,
+~~Y=p \equiv q \equiv p \vee q,
+~~E=z \wedge r 
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~(p \equiv q \equiv p \vee q) \wedge r \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.35)~~ (p\wedge q \equiv p \equiv q \equiv p \vee q)[p,q:=p \equiv q \equiv p \vee q,~r], \\ 
+X=(p \equiv q \equiv p \vee q) \wedge r,
+~~Y=p \equiv q \equiv p \vee q\equiv r \equiv (p \equiv q \equiv p \vee q) \vee r,
+~~E=z 
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv p \vee q\equiv r \equiv (p \equiv q \equiv p \vee q) \vee r \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.24)~~ (p \vee q \equiv q \vee p)[p,q:=p \equiv q \equiv p \vee q,~r], \\ 
+X=(p \equiv q \equiv p \vee q) \vee r,
+~~Y=r \vee (p \equiv q \equiv p \vee q),
+~~E=p \equiv q \equiv p \vee q\equiv r \equiv z 
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv p \vee q\equiv r \equiv r \vee (p \equiv q \equiv p \vee q) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.27)~~ (p \vee (q \equiv r) \equiv p \vee q \equiv p \vee r)[p,q,r:=r,~p\equiv q,~p \vee q], \\ 
+X=r \vee (p \equiv q \equiv p \vee q),
+~~Y=r \vee (p \equiv q) \equiv r \vee (p \vee q),
+~~E=p \equiv q \equiv p \vee q\equiv r \equiv z  \end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv p \vee q\equiv r \equiv r \vee (p \equiv q) \equiv r \vee (p \vee q) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.27)~~ (p \vee (q \equiv r) \equiv p \vee q \equiv p \vee r)[p,q,r:=r,~p,~q], \\ 
+X=r \vee (p \equiv q),
+~~Y=r \vee p \equiv r \vee q,
+~~E=p \equiv q \equiv p \vee q\equiv r \equiv z \equiv r \vee (p \vee q)  
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv p \vee q\equiv r \equiv r \vee p \equiv r \vee q \equiv r \vee (p \vee q) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.2)~~ (p \equiv q \equiv q \equiv p)[p,q:=p\vee q,~r], \\ 
+X=p \vee q\equiv r ,
+~~Y=r \equiv p \vee q ,
+~~E=p \equiv q \equiv z \equiv r \vee p \equiv r \vee q \equiv r \vee (p \vee q)
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv p \vee q \equiv r \vee p \equiv r \vee q \equiv r \vee (p \vee q) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.24)~~ (p \vee q \equiv q \vee p)[p,q:=r,~p], \\ 
+X=r \vee p ,
+~~Y=p \vee r,
+~~E= p \equiv q \equiv r \equiv p \vee q \equiv z \equiv r \vee q \equiv r \vee (p \vee q)  
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv p \vee q \equiv p \vee r \equiv r \vee q \equiv r \vee (p \vee q) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.27)~~ p \vee (q \equiv r) \equiv p \vee q \equiv p \vee r~, \\ 
+X=p \vee q \equiv p \vee r ,
+~~Y=p \vee (q \equiv r),
+~~E=p \equiv q \equiv r \equiv z \equiv r \vee q \equiv r \vee (p \vee q)
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv p \vee (q \equiv r) \equiv r \vee q \equiv r \vee (p \vee q) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.2)~~ (p \equiv q \equiv q \equiv p)[p,q:=p \vee (q \equiv r),~r \vee q], \\ 
+X=p \vee (q \equiv r) \equiv r \vee q,
+~~Y= r \vee q \equiv p \vee (q \equiv r),
+~~E=p \equiv q \equiv r \equiv z \equiv r \vee (p \vee q)   
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv r \vee q \equiv p \vee (q \equiv r) \equiv r \vee (p \vee q) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.24)~~ (p \vee q \equiv q \vee p)[p,q:=r,~p\vee q], \\ 
+X=r \vee (p \vee q) ,
+~~Y=(p \vee q) \vee r,
+~~E=p \equiv q \equiv r \equiv r \vee q \equiv p \vee (q \equiv r) \equiv z
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv r \vee q \equiv p \vee (q \equiv r) \equiv (p \vee q) \vee r \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.25)~~ (p \vee q) \vee r \equiv p \vee (q \vee r)~, \\ 
+X=(p \vee q) \vee r,
+~~Y=p \vee (q \vee r),
+~~E=p \equiv q \equiv r \equiv r \vee q \equiv p \vee (q \equiv r) \equiv z
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv r \vee q \equiv p \vee (q \equiv r) \equiv p \vee (q \vee r) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.27)~~ (p \vee (q \equiv r) \equiv p \vee q \equiv p \vee r)[q,r:=q \equiv r,~q \vee r], \\ 
+X=p \vee (q \equiv r) \equiv p \vee (q \vee r) ,
+~~Y=p \vee (q \equiv r \equiv q \vee r),
+~~E=p \equiv q \equiv r \equiv r \vee q \equiv z
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv r \vee q \equiv p \vee (q \equiv r \equiv q \vee r) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.24)~~ (p \vee q \equiv q \vee p)[p:=r] , \\ 
+X= r \vee q,
+~~Y=q \vee r ,
+~~E=p \equiv q \equiv r \equiv z \equiv p \vee (q \equiv r \equiv q \vee r)
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \equiv q \equiv r \equiv q \vee r \equiv p \vee (q \equiv r \equiv q \vee r) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.35)~~ (p\wedge q \equiv p \equiv q \equiv p \vee q)[q:=q \equiv r \equiv q \vee r], \\ 
+X=p \equiv q \equiv r \equiv q \vee r \equiv p \vee (q \equiv r \equiv q \vee r),
+~~Y=p \wedge (q \equiv r \equiv q \vee r),
+~~E=z
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \wedge (q \equiv r \equiv q \vee r) \\ \\
+\equiv ~~~~~~~~~~ \left\langle~~ \begin{matrix} 
+(3.35)~~ (p\wedge q \equiv p \equiv q \equiv p \vee q)[p,q:=q,~r], \\ 
+X= q \equiv r \equiv q \vee r,
+~~Y=q\wedge r,
+~~E=p \wedge z
+\end{matrix} ~~\right\rangle \\ \\
+                 ~~~~~~~~p \wedge (q\wedge r) \\ \\
+$ \\
+
+Finalmente por transitividad, $(p \wedge q)\wedge r \equiv p \wedge (q \wedge r)$.
+
+\end{document}

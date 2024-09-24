@@ -1,0 +1,186 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{Resumen de Axiomas, Teoremas, Propiedades y Definiciones}
+\author{Junior Miguel Lara Torres}
+\date{today}
+
+\graphicspath {{C:/Users/JuniorLara/Desktop/TexMaker_Files/}}
+\begin{document}
+
+\begin{center}
+\par \includegraphics[scale=1]{USB} \par
+Universidad Simon Bolivar \\ Curso: CI2526 / Estructuras Discretas 2 \\ Trimestre: Abril-Julio, 2021 \\ Segundo Parcial \\
+\end{center}
+$\\ $
+\begin{center}
+\textbf{Resumen de Axiomas, Teoremas y Definiciones.}
+\end{center}
+$\\ $
+\textbf{ Definiciòn de Relaciòn Reflexiva.}
+\begin{center}
+$ \textit{R es reflexiva en A} \equiv \forall a \in A ~~((a,a) \in R) $
+\end{center}
+$\\ $
+\textbf{ Definiciòn de Relaciòn Simètrica.}
+\begin{center}
+$ \textit{R es simètrica en A} \equiv \forall a,b \in A ~~((a,b) \in R \implies (b,a) \in R) $
+\end{center}
+$\\ $
+\textbf{ Definiciòn de Relaciòn Antisimètrica.}
+\begin{center}
+$ \textit{R es antisimètrica en A} \equiv \forall a,b \in A ~~((a,b) \in R \land (b,a) \in R \implies a=b) $
+\end{center}
+$\\ $
+\textbf{ Definiciòn de Relaciòn Transitiva.}
+\begin{center}
+$ \textit{R es transitiva en A} \equiv \forall a,b,c \in A ~~((a,b) \in R \land (b,c) \in R \implies (a,c) \in R) $
+\end{center}
+$\\ $
+\textbf{ Definiciòn de Restricciones.} Para denotar al subconjunto de R cuyas primeras coordenadas están
+en el conjunto C se usa la notación $R |_{izq}(C)$. Esto es
+\begin{center}
+$ R|_{izq}(C)\equiv \{(a,b) \in R: a \in C\} $
+\end{center}
+Para denotar al subconjunto de R cuyas segundas coordenadas están en el conjunto C se usa la
+notación $R |_{der}(C)$. Esto es
+\begin{center}
+$ R|_{der}(C)\equiv \{(a,b) \in R: b \in C\} $
+\end{center}
+\textbf{ Definiciòn de dominio de una relación.} El dominio de una relación R es
+\begin{center}
+$ Dom(R)= \{x | (\exists y | (x,y) \in R)\} $
+\end{center}
+$\\ $
+\textbf{ Definiciòn de rango de una relación.} El rango de una relación R es
+\begin{center}
+$ Rgo(R)= \{y | (\exists x | (x,y) \in R)\} $
+\end{center}
+$\\ $
+\textbf{ Definición de composición de relaciones.} La composición de dos relaciones R y S es
+\begin{center}
+$ R \circ S = \{(a,c)| (\exists b |: (a,b) \in S \land (b,c) \in R)\} $
+\end{center}
+$\\ $
+\textbf{Clausura reflexiva r(R).} Dada una relación R de A en A, se define la clausura reflexiva de R
+como la menor relación reflexiva de A en A que contiene a R. Equivalentemente, la clausura reflexiva de R, r(R), se define como la relación de A en A que satisface las siguientes propiedades:
+$\\ $
+$ \textsf{(I)  r(R) es reflexiva.}$ \\ $ \textsf{(II)  R} \subseteq \textsf{r(R)} $ \\ $ \textsf{(III)  Si R' es reflexiva y R} \subseteq \textsf{R', entonces r(R)} \subseteq \textsf{R'} $
+$\\ $
+$\\ $
+\textbf{Clausura simétrica s(R).} Dada una relación R de A en A, se define la clausura simétrica de
+R como la menor relación simétrica de A en A que contiene a R. Equivalentemente, la clausura
+simétrica de R, s(R), se define como la relación de A en A que satisface las siguientes propiedades:
+$\\ $ 
+$ \textsf{(I)  s(R) es simètrica.}$ \\ $ \textsf{(II)  R} \subseteq \textsf{s(R)} $ \\ $ \textsf{(III)  Si R' es simètrica y R} \subseteq \textsf{R', entonces s(R)} \subseteq \textsf{R'} $
+$\\ $
+$\\ $
+\textbf{Clausura transitiva t(R).} Dada una relación R de A en A, se define la clausura transitiva de
+R como la menor relación transitiva de A en A que contiene a R. Equivalentemente, la clausura
+transitiva de R, t(R), se define como la relación de A en A que satisface las siguientes propiedades:
+$\\ $ 
+$ \textsf{(I)  t(R) es transitiva.}$ \\ $ \textsf{(II)  R} \subseteq \textsf{t(R)} $ \\ $ \textsf{(III)  Si R' es transitiva y R} \subseteq \textsf{R', entonces t(R)} \subseteq \textsf{R'} $
+$\\ $
+$\\ $
+\textbf{Relación Identidad de A.} Dado un conjunto A se define la relación Identidad de A como
+\begin{center}
+$ Id_{A}=\{ (x,x): x \in A \} $
+\end{center}
+$\\ $
+\textbf{Propiedades de Clausuras:}
+$\\ $
+$ \textsf{(I)} ~~r(R) = R \cup Id_{A} $ \\ 
+$ \textsf{(II)} ~~s(R) = R \cup R^{-1} $ \\ 
+$ \textsf{(III)} ~~ t(R) = \displaystyle\bigcup_{i \geq 1} R^i $ \\
+$ \textsf{(IV)} ~~t(R) = \displaystyle\bigcup_{i=1}^{n-1} R^i $ \\
+$ \textsf{(V) Sean R y S relaciones sobre A tales que R} \subseteq \textsf{S. Entonces, r(R)} \subseteq \textsf{r(S)} $ \\
+$ \textsf{(VI) Sean R y S relaciones sobre A tales que R} \subseteq \textsf{S. Entonces, s(R)} \subseteq \textsf{s(S)} $ \\
+$ \textsf{(VII) Sean } R_{1} \textsf{ y } R_{2} \textsf{ relaciones sobre A, entonces } ~~r(R_{1} \cup R_{2}) = r(R_1) \cup r(R_2) $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+\textbf{Teorema 5.8:} Si R es una relacion sobre A, A tiene  n elementos y M es la matriz asociada a R, entonces \\
+$ ~~~~ $ 1. R es reflexiva si y sòlo si $ I_{n} \leq  M. \\ $ 
+$ ~~~~ $ 2. R es simètrica si y sòlo si $ M = M^{t}. \\ $
+$ ~~~~ $ 3. R es antisimètrica si y sòlo si $ M \land M^{t} \leq  I_{n}. \\ $ 
+$ ~~~~ $ 4. R es transitiva si y sòlo si $ M^ {2} \leq  M.  \\ $
+Tambièn  se puede usar la matriz asociada a una relaciòn para hallar sus clausuras reflexiva, simètrica y transitiva. Ello se formaliza en el siguiente teorema.
+$\\ $
+\textbf{Teorema 5.9:} Si R es una relacion sobre A, A tiene  n elementos y $M_{R}$ es la matriz asociada a R, entonces las matrices asociadas a las clausuras se hallan como sigue: \\
+$ ~~~~ $ 1. Reflexiva: $M_{r(R)} = I_{n} \vee  M_{R}. \\ $ 
+$ ~~~~ $ 2. Simètrica: $ M_{s(R)} = M_{R} \vee M_{R}^{t}. \\ $
+$ ~~~~ $ 3. Transitiva: $ M_{t(R)} = \displaystyle\bigvee_{i=1}^{n-1}M_{R}^i. \\ $
+$\\ $
+$\\ $
+\textbf{Relación de equivalencia.} Una relación en un conjunto A se llama relación de equivalencia si es \\
+$ ~~~~ $ 1. Reflexiva. $\\ $ 
+$ ~~~~ $ 2. Simètrica. $\\ $ 
+$ ~~~~ $ 3. Transitiva. $\\ $ 
+$\\ $
+$\\ $
+\textbf{Clase de equivalencia.} Si R es una relación de equivalencia sobre un conjunto A y $ x $ es un
+elemento de A se define la clase de equivalencia de $ x $ como el conjunto de los elementos de A que
+están relacionados mediante R con $ x $:
+\begin{center}
+$ R[x]= \{y \in A : xRy\}$
+\end{center}
+$\\ $
+Cuando R se sobreentiende simplemente se usa la notación [x] para la clase de equivalencia de $ x $.
+$\\ $
+\textbf{Conjunto cociente.} Al conjunto de las clases de equivalencia en las cuales una relación de equivalencia
+R sobre un conjunto A parte al conjunto se denomina conjunto cociente de A con respecto
+a R y se denota por
+\begin{center}
+$ A/R= \{R[x]: x \in A\}$
+\end{center}
+$\\ $
+\textbf{Relación de orden parcial.} Una relación en un conjunto A se llama relación de orden
+parcial si es \\
+$ ~~~~ $ 1. Reflexiva. $\\ $ 
+$ ~~~~ $ 2. Antisimètrica. $\\ $ 
+$ ~~~~ $ 3. Transitiva. $\\ $ 
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+$\\ $
+\textbf{Definiciones:} \\
+$~~ $ Sea $f$ una funcion de A en B, $f: A \to B$. Entonces, $ \\ $
+$ ~~~~~~~~~~ $ $f$ es Inyectiva $\equiv (f(a)=f(b) \implies a=b )$. $\\ $ 
+$ ~~~~~~~~~~ $ $f$ es Sobreyectiva $\equiv (\forall b  \in B) ~(\exists a \in A) ~ (f(a)=b)$. $\\ $
+$ ~~~~~~~~~~ $ $f$ es Sobreyectiva $\equiv  b  \in B \implies (\exists a \in A) ~~ (f(a)=b)$. $\\ $ 
+$ ~~~~~~~~~~ $ $f$ es Biyectiva $\equiv f$ es Inyectiva y Sobreyectiva. $\\ $ 
+$\\ $
+$\\ $
+\textbf{Imagen de un conjunto.} Dada una función $f: A \to B$ y $A' \subseteq A$, se
+define la imagen de A' mediante f como el conjunto de los elementos de B que son imágenes
+de algún elemento de A'. Simbólicamente:
+\begin{center}
+$f(A')= \{y \in B: \exists x \in A' ~~ (f(x)=y)\}$
+\end{center}
+$\\ $
+\textbf{Imagen inversa o preimagen.} Dada una función $f: A \to B$ y $B' \subseteq B$, se define la imagen
+inversa, o preimagen, de B' mediante f como el conjunto de los elementos de A cuyas imágenes mediante f pertenecen a B'. Simbólicamente:
+\begin{center}
+$f^{-1}(B')= \{x \in A: f(x) \in B'\}$
+\end{center}
+$\\ $
+\end{document}

@@ -1,0 +1,130 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=cyan,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={titulo},
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+
+\title{Asignación 1}
+
+\begin{document}
+
+\begin{center}
+\par \includegraphics[scale=1]{USB} \par
+Universidad Simon Bolivar \\ Curso: CI3311 / Sistemas de Base de Datos I \\ Trimestre: Enero-Marzo, 2024 \\ Profesor: Pedro Pérez \\ Estudiante: Junior Miguel Lara Torres - Carnet: 17-10303 \\
+\end{center}
+
+\begin{center}
+Asignación 1
+\end{center}
+
+Con la finalidad de evaluar su creatividad para plantear y resolver problemas usando Sistemas de Bases de datos, se requiere que imagine un mini-mundo alrededor de "\textbf{Juegos ARPG}". \\
+
+1. Escriba una breve descripción del mini-mundo que imaginó, no es necesario que sea muy detallada, solo que transmita una idea general del problema que pretende resolver. \\
+
+La compañía Ilussion Junior's que presta servicios de entretenimiento en ámbito gamer al público en general, desea que sus sucursales, entiéndase Cybers, le proporcionen una lista de juegos ARPG demandados por el público consumidor de respectivo Cyber, dada la escasez del género en los catálogos, con el propósito de conseguir ofertas, descuentos especiales, patrocinios, entre otros. Adicionalmente, cada Cyber debe proporcionar información de eventos que se quieran realizar sobre determinado juego ARPG. \\
+
+2.  Siguiendo lo explicado en clase sobre los pasos para la correcta implementación de una solución de BD, escriba una \textbf{LISTA} de \textbf{REQUERIMIENTOS DE DATOS} que deriven del \textbf{ÁNALISIS} del mini-mundo que usted imaginó. En dichos requerimientos, deben poder identificarse \textbf{EXPLÍCITAMENTE} al menos 5 entidades distintas. \textbf{(NO SE ESTÁ PIDIENDO EL ESQUEMA, SÓLO LOS REQUERIMIENTOS RESULTANTES DEL ANÁLISIS)} \\
+
+Cada Cyber realiza entrevistas a su clientela en busqueda de informacion que le permite determinar que juegos del genero ARPG debe agregar a sus catalogos o en su defecto organizar los eventos de los mismos.\\
+
+\begin{itemize}
+
+\item La compañía Ilussion Junior's maneja información detallada y útil de contacto de cada Cyber para posibles patrocinios, descuentos y beneficios en los juegos. Los cybers cuentan con nombre, direccion e informacion de contacto. Esta compañia maneja, a detalle, información de clientes, y cantidad que frecuentan el Cyber, los eventos que podrían realizarse con sus respectivas demandas de plataformas gamers e información detallada de los juegos en sus catálogos. El Cyber no puede proporcionar información de un juego ya en catálogo (Relación Juego -- Cyber es M:N).
+
+\item La informacion de la clientela que frecuenta al Cyber debe contar con, si esta posee membrecía, una identificación, edad, si se desarrolla profesionalmente en algún juego en particular e información de contacto esencial. Tambien el Cyber debe tener la capacidad de recibir peticiones, que pueden variar en quejas de algun juego ya existente o inconformidad con el cyber en general, como tambien recibir solicitudes de ingreso para algún juego ARPG que no se encuentre actualmente catálogado. Estas peticiones cuentan con una fecha, serial y un comentario explicativo de la queja o solicitud en cuestión.
+
+\item El Cyber debe manejar la información de cada juego ARPG que se encuentra en su catálogo. El nombre exacto, la clasificación para el cual el juego está dirigido, su categoría y los requisitos óptimos del ordenador que este demanda. Se debe contabilizar el estimado de horas por día promedio que juegan a cada juego ARPG en el catálogo. Informar si el juego en cuestión posee un sistema de ranking para posibles eventos competitivos. El cyber debe tener un mínimo de 5 juegos en su catálogo.
+
+\item La descripción de cada evento debe contener temática, es decir a qué juego va dirigido, se debe especificar el rango de edades permitidos para los clientes que participan. Un evento se identifica por la fecha, hora y nombre. Los clientes que frecuentan los Cyber son los que forman equipos respetando las reglas del mínimo y máximo de integrantes por equipos descritos en las características de evento, en este sentido se debe registrar la cantidad de equipos totales inscritos. La creación de evento está bajo el criterio de que el Cyber tiene una previa reunión con un mínimo determinado de clientes/jugadores que desean participar/crear el evento. Con esto se determina si se da inicio a los preparativos del evento, de lo contrario no tiene sentido crear alguno. Adicionalmente, los eventos no pueden tener fechas en dias festivos y no pueden ser días lunes (¿Quién juega un lunes?). La hora debe establecerse como máximo a las 17 horas y de inicio no más temprano de las 10 horas (Hora Militar).
+
+\item El cyber debe generar un registro único de todos los integrantes del equipo, los miembros deben designar un líder de equipo en caso de requerirlo en las características del evento, el equipo debe describir o en su defecto otorgar un logo representativo del equipo, colores, periféricos personalizados y especificaciones precisas del equipo gamer a utilizar durante el evento, el cual es uno por equipo. El Cyber proporcionará el equipo gamer descrito a cada miembro para que participe en determinado evento. Adicionalmente, en caso de ser requerido por especificaciones particulares del evento, los equipos deben proporcionar al Cyber un diseño único del traje a utilizar en cada uno de sus miembros.
+
+\end{itemize}
+
+A continuación, se describre cada entidad con sus respectivos atributos.\\
+\begin{itemize}
+\item Entidad: Cyber
+\begin{itemize}
+\item Nombre
+\item Dirección
+\item Números de teléfonos
+\item Email
+\item Numero de clientes
+\end{itemize}
+
+\item Entidad: Cliente
+\begin{itemize}
+\item Primer Nombre
+\item Primer Apellido
+\item Número de cédula
+\item Edad
+\item Membresía
+\item Juego de Profesión
+\item Email
+\item Números de Telefonos
+\end{itemize}
+
+\item Entidad: Juego
+\begin{itemize}
+\item Nombre
+\item Clasificación
+\item Requerimentos de Hardware Óptimos (CPU, Gráfica, RAM)
+\item Promedio de horas diarias jugadas
+\item Sistema de Ranking
+\end{itemize}
+
+\item Entidad: Categoria
+\begin{itemize}
+\item Nombre
+\end{itemize}
+
+\item Entidad: Petición
+\begin{itemize}
+\item Serial ID
+\item Tipo
+\item Comentario
+\item Fecha
+\end{itemize}
+
+\item Entidad: Evento
+\begin{itemize}
+\item Nombre
+\item Fecha
+\item Hora
+\item Rango de edades (Min y Max)
+\item Número de equipos registrados
+\item Integrantes por equipo (Máximo y Mínimo)
+\item Requerimientos (Lider, Traje, Max y Min miembros por equipo)
+\end{itemize}
+
+\item Entidad: Equipo
+\begin{itemize}
+\item Número
+\item Nombre
+\item Número de Miembros
+\item Equipo Gamer
+\item Periféricos
+\item Color
+\item Logo
+\item Traje
+\end{itemize}
+
+\end{itemize}
+\end{document}
