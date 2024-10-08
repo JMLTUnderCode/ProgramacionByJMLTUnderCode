@@ -170,3 +170,91 @@ getDeveloper(developer3);
 
 console.log("\n************************************************\n\n");
 
+console.log("************************************************");
+console.log("************* Tipos de Datos: CLASS ************\n\n");
+
+class Pelicula {
+    nombre? : string;
+    actores? : string[];
+    director? : string;
+    fecha? : Date;
+    transmision : boolean = false;;
+
+    constructor(nombre : string, actores : string[], director : string, fecha : Date) {
+        this.nombre = nombre;
+        this.actores = actores;
+        this.director = director;
+        this.fecha = fecha;
+    }
+
+    info() {
+        console.log(`\"${this.nombre}\" es una pelicula de ${this.director}.`);
+        console.log(`Actores: ${this.actores}`);
+        console.log(`Fecha de estreno: ${this.fecha}`);
+    }
+
+    iniciarTransmision() {
+        console.log(`Iniciando transmision...`);
+        this.transmision = true;
+    }
+
+    finalizarTransmision() {
+        console.log(`Finalizando transmision...`);
+        this.transmision = false;
+    }
+
+    estado(){
+        console.log(`Estado: ${this.transmision ? `En transmision` : `No transmitiendo`}`);
+    }
+
+}
+
+let pelicula1 = new Pelicula(`El Padrino`, [`Marlon Brando`, `Al Pacino`, `Robert Duvall`], `Francis Ford Coppola`, new Date(1972, 11, 24));
+
+pelicula1.info();
+pelicula1.iniciarTransmision();
+pelicula1.estado();
+pelicula1.finalizarTransmision();
+pelicula1.estado();
+
+console.log("\n************************************************\n\n");
+
+console.log("************************************************");
+console.log("******** Tipos de Datos: Encapsulamientos ******\n\n");
+
+class Estudiantes<T>{
+    private edad? : number;
+    private carrera? : T;
+    
+    constructor(private nombre? : string) {};
+
+    setInfo( edad : number, carrera : T) {
+        this.edad = edad;
+        this.carrera = carrera;
+    };
+
+    getInfo() {
+        return {
+            nombre : this.nombre,
+            edad : this.edad,
+            carrera : this.carrera
+        };
+    }
+
+    printInfo() {
+        console.log(`\nDatos del estudiante:`);
+        console.log(`Nombre: ${this.nombre}`);
+        console.log(`Edad: ${this.edad}`);
+        console.log(`Carrera: ${this.carrera}`);
+    }
+}
+
+let estudiante1 = new Estudiantes<string>(`Junior Lara`);
+
+estudiante1.setInfo(25, `0800 Ingeniería de Computación`);
+
+estudiante1.printInfo();
+console.log(estudiante1.getInfo());
+console.log(estudiante1);
+
+console.log("\n************************************************\n\n");
